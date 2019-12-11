@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+
+$navbar-item-hover-color: hsl(17, 71%, 53%);
+
+$navbar-height: 5rem;
+
+$family-sans-serif: 'Clear sans';
+$navbar-breakpoint: 800px;
+
+//$body-family: "Raleway";
+
+// svg {
+//     width: 100%;
+//     height: 100%;
+// }
+
+.page-enter-active, .page-leave-active {
+    transition: opacity .1s;
+}
+
+.page-enter, .page-leave-to {
+    opacity: 0;
+}
+
+@import 'bulma/bulma.sass';
+//@import './hamburger.sass';
+
+
+
+//@import '~bulma'
+
+.outline {
+    color: black !important;
+    text-shadow: 1px 1px 0px white, 1px -1px 0px white, -1px 1px 0px white, -1px -1px 0px white;
+}
+.outline4 {
+    color: white !important;
+    text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;
+}
