@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHero :img="hero_image.meta.download_url" :heading="hero_heading"></PageHero>
+        <PageHero img="hero_image.meta.download_url" heading="hero_heading"></PageHero>
 
         <nav class="navbar">
             <div class="container">
@@ -132,15 +132,20 @@
         </section>
     </div>
 </template>
+
 <script>
-    import api from '~/plugins/axios'
+    import PageHero from '@/components/PageHero'
 
     export default {
-        layout: 'default',
+        components: { PageHero },
         data() {
             return {
                 menuOpen: false,
+                news: '',
             }
+        },
+        mouted() {
+            console.log('mounted: leistungen', this)
         },
         methods: {
             toggleMenu() {
@@ -150,13 +155,4 @@
     }
 </script>
 
-<style>
-    .hero {
-        background-size: cover;
-        background-position: 50% 50%;
-        background-image: url('~assets/tierklinik/team.jpg');
-    }
-    .team {
-        padding: 3rem 1rem;
-    }
-</style>
+<style></style>

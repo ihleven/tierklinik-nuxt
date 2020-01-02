@@ -1,59 +1,9 @@
 <template>
     <div>
-        <section class="hero is-medium is-transparent" :style="{ 'background-image': 'url(http://tierklinik.webfactional.com' + hero_image.meta.download_url + ')' }">
-            <!-- Hero head: will stick at the top -->
-            <div class="hero-head">
-                <nav class="navbar">
-                    <div class="container">
-                        <div class="navbar-brand">
-                            <n-link class="navbar-item" to="/tierklinik">
-                                <img src="~assets/logo/logo-tierklinik.svg" alt="Logo" />
-
-                                <h1 class="title is-4">
-                                    Tierklinik
-                                    <div class="subtitle is-6">Tschabrun</div>
-                                </h1>
-                            </n-link>
-
-                            <span class="navbar-burger burger" :class="{ 'is-active': menuOpen }" data-target="navbarMenu" @click="toggleMenu">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                        </div>
-                        <div class="navbar-menu" :class="{ 'is-active': menuOpen }">
-                            <div class="navbar-start">
-                                <n-link :to="'/team'" class="navbar-item">Team</n-link>
-                                <a class="navbar-item">Rundgang</a>
-                                <a class="navbar-item">Fachgebiete</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-            <!-- Hero content: will be in the middle -->
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title is-1">{{ hero_heading }}</h1>
-                    <!-- <h2 class="subtitle">Dr. Sylvia und Dr. Rudolf Tschabrun</h2> -->
-                    <!-- <h3 class="subtitle is-3">Kleintierklinik in Nüziders</h3> -->
-                </div>
-            </div>
-
-            <div class="hero-foot">
-                <div class="box cta">
-                    <p class="has-text-centered">
-                        <span class="tag is-primary">New</span>
-                        {{ news || '' }}
-                    </p>
-                </div>
-            </div>
-        </section>
+        <PageHero :img="hero_image.meta.download_url" :heading="hero_heading"></PageHero>
 
         <section class="section team">
             <div class="container">
-                members: {{ members }}
                 <div class="columns">
                     <div class="intro column is-8 is-offset-2">
                         <h2 class="title">{{ heading }}</h2>
@@ -154,26 +104,23 @@
         </section>
     </div>
 </template>
-<script>
-    import axios from 'axios'
 
-    const instance = axios.create({
-        baseURL: 'http://tierklinik.webfactional.com/api/v2/',
-    })
-    instance.defaults.headers.common['Accept'] = 'application/json'
+<script>
+    import PageHero from '@/components/PageHero'
+    import api from '~/plugins/axios'
 
     export default {
         layout: 'default',
-        asyncData({ params }) {
-            console.log('asyncData', params)
-            return instance.get(`pages/6/`).then(res => {
-                console.log('asyncData', res.data)
+        components: { PageHero },
+        asyncData() {
+            return api.get(`pages/6/`).then(res => {
                 return res.data
             })
         },
         data() {
             return {
                 menuOpen: false,
+                news: '',
             }
         },
         mouted() {

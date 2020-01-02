@@ -54,47 +54,39 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1">Tierklinik Tschabrun</h1>
-                <h2 class="subtitle">Dr. Sylvia und Dr. Rudolf Tschabrun</h2>
-                <h3 class="subtitle is-3">Kleintierklinik in Nüziders</h3>
-                <p class="is-5">6714 Nüziders, Elserweg 8</p>
-                <!-- </div>
-        <div class="container">-->
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <nav class="level">
-                    <div class="level-item has-text-centered">
-                        <div>
-                            <p class="heading is-5 outline">Telefon:</p>
-                            <p class="title is-4 outline4">+43 (0) 5552 / 66755</p>
-                        </div>
-                    </div>
-                    <div class="level-item has-text-centered">
-                        <div>
-                            <p class="heading">Email</p>
-                            <p class="title is-4 outline4">mail@tierklinik-tschabrun.com</p>
-                        </div>
-                    </div>
-                    <div class="level-item has-text-centered">
-                        <div>
-                            <p class="heading">Followers</p>
-                            <p class="title">456K</p>
-                        </div>
-                    </div>
-                    <div class="level-item has-text-centered">
-                        <div>
-                            <p class="heading">Likes</p>
-                            <p class="title">789</p>
-                        </div>
-                    </div>
-                </nav>
+                <h1 class="title is-2">Kleintierklinik Nüziders</h1>
+                <h2 class="subtitle is-4">
+                    Dr. Rudolf und Dr. Sylvia Tschabrun, <br />
+                    Mag. Susanne Rath
+                </h2>
+
+                <!-- <h3 class="title is-3 klinik"></h3> -->
+                <!-- <p class="address is-5">6714 Nüziders, Elserweg 8</p> -->
             </div>
         </div>
 
         <div class="hero-foot">
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <div class="notification">
+                        <p class="heading is-5">Telefon:</p>
+                        <p class="title is-6">+43 (0) 5552 / 66755</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div class="notification">
+                        <p class="heading">Email</p>
+                        <p class="title is-6">mail@tierklinik-tschabrun.com</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div class="notification">
+                        <p class="heading">Adresse:</p>
+                        <p class="title is-6">6714 Nüziders, Elserweg 8</p>
+                    </div>
+                </div>
+            </nav>
+
             <div class="box cta">
                 <p class="has-text-centered">
                     <span class="tag is-primary">New</span>
@@ -121,27 +113,33 @@
 </script>
 
 <style lang="scss" scoped>
-    .hero-body .title {
-        color: hsl(192, 17%, 99%) !important;
+    .outline {
+        color: black !important;
+        text-shadow: 1px 1px 0px white, 1px -1px 0px white, -1px 1px 0px white, -1px -1px 0px white;
     }
-    .hero-body .subtitle {
-        color: hsl(192, 17%, 99%) !important;
-        padding-top: 2rem;
-        line-height: 1.5;
+    .outline4 {
+        color: white !important;
+        text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;
     }
-
     .hero {
         background-size: cover;
         background-position: 50% 50%;
         background-image: url('~assets/tierklinik/teaser-katze.jpg');
 
         .navbar {
-            background: rgba(250, 250, 250, 0.9);
+            .navbar-brand {
+                padding: 1rem;
+                .navbar-item {
+                    margin: -1rem;
+                    padding: 0 1rem;
+                }
+            }
+            background: rgba(250, 250, 250, 0.3);
             .navbar-item {
                 img {
                     max-height: unset;
-                    width: 4rem;
-                    height: 4rem;
+                    width: 5rem;
+                    height: 5rem;
                     padding-left: 1rem;
                 }
                 h1 {
@@ -160,6 +158,25 @@
                         border-bottom: 1px solid currentColor;
                     }
                 }
+            }
+        }
+        .hero-body {
+            .title {
+                color: hsl(192, 17%, 99%) !important;
+                // color: rgb(61, 59, 59) !important;
+                text-shadow: 1px 1px 5px rgb(109, 107, 107);
+            }
+            .subtitle {
+                color: hsl(180, 3%, 23%) !important;
+
+                // padding-top: 2rem;
+                // line-height: 1.5;
+                text-shadow: 3px 3px 5px rgba(197, 191, 191, 0.452), 3px -3px 5px rgb(197, 191, 191);
+            }
+            .klinik {
+                padding-top: 2rem;
+                color: black !important;
+                text-shadow: 3px 3px 5px rgba(197, 191, 191, 0.452), 3px -3px 5px rgba(197, 191, 191, 0.452), -3px 3px 5px rgba(197, 191, 191, 0.452), -3px -3px 5px rgba(197, 191, 191, 0.452);
             }
         }
     }
