@@ -1,128 +1,61 @@
 <template>
     <div>
-        <PageHero img="hero_image.meta.download_url" heading="hero_heading"></PageHero>
+        <Navigation />
+        <PageHero :img="story.content.hero_image" :heading="story.content.hero_title"></PageHero>
 
-        <nav class="navbar">
+        <section class="section">
             <div class="container">
-                <div class="navbar-brand">
-                    <n-link class="navbar-item" to="/">
-                        <img src="~assets/logo/logo-tierklinik.svg" alt="Logo" />
-
-                        <h1 class="title is-4">
-                            Tierklinik
-                            <div class="subtitle is-6">Tschabrun</div>
-                        </h1>
-                    </n-link>
-
-                    <span class="navbar-burger burger" :class="{ 'is-active': menuOpen }" data-target="navbarMenu" @click="toggleMenu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div class="navbar-menu" :class="{ 'is-active': menuOpen }">
-                    <div class="navbar-start">
-                        <n-link :to="'/team'" class="navbar-item">Team</n-link>
-                        <n-link :to="'/rundgang'" class="navbar-item">Rundgang</n-link>
-                        <n-link :to="'/fachgebiete'" class="navbar-item">Fachgebiete</n-link>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <section class="section team">
-            <div class="container">
-                <div class="columns">
-                    <div class="intro column is-8 is-offset-2">
-                        <h2 class="title">Perfect for developers or designers!</h2>
-                        <br />
-                        <p class="subtitle">Vel fringilla est ullamcorper eget nulla facilisi. Nulla facilisi nullam vehicula ipsum a. Neque egestas congue quisque egestas diam in arcu cursus.</p>
-                    </div>
-                </div>
-
                 <div class="tile is-ancestor">
-                    <div class="tile is-parent">
-                        <div class="article card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="~assets/tierklinik/rudi.jpg" alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3 class="title">Dr. Rudolf Tschabrun</h3>
-                                    <h5 class="subtitle">Fachtierarzt</h5>
-                                    Er ist ein vielseitiger Chirurg, die Tätigkeit reicht von anspruchsvollen Tumoroperationen über Abdominalchirurgie bis zu aufwendigen Knochenoperationen. Ein
-                                    weiteres seiner Fachgebiete ist die Dermatologie.
-                                </div>
-                            </div>
+                    <div class="tile is-parent is-3">
+                        <div class="tile is-child">
+                            <aside class="menu">
+                                <p class="menu-label">
+                                    Fachgebiete
+                                </p>
+                                <ul class="menu-list">
+                                    <li><a>Innere</a></li>
+                                    <li><a>Kardiologie</a></li>
+                                    <li><a>Orthopädie</a></li>
+                                    <li><a>Dermatologie</a></li>
+                                    <li><a>Zahnbehandlungen</a></li>
+                                    <li><a>Onkologie</a></li>
+                                    <li><a>Gyn</a></li>
+                                    <li><a>Behandlung und Chirurgie von Kaninchen und Meerschweinchen</a></li>
+                                </ul>
+                                <p class="menu-label">
+                                    Behandlung / Therapie
+                                </p>
+                                <ul class="menu-list">
+                                    <li>
+                                        <a class="is-active">Operationen</a>
+                                        <ul>
+                                            <li><a>Weichteilchirurgie</a></li>
+                                            <li><a>Gelenks-Chirurgie</a></li>
+                                            <li><a>Knochenchirurgie</a></li>
+                                            <li><a>Tumorentfernungen</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a>Medikamente</a></li>
+                                    <li><a>Akkupunktur</a></li>
+                                    <li><a>Lasertherapie</a></li>
+                                </ul>
+                                <p class="menu-label">
+                                    Diagnostik
+                                </p>
+                                <ul class="menu-list">
+                                    <li><a>Digitales Röntgen</a></li>
+                                    <li><a>Blutanalysegerät für Blutchemie </a></li>
+                                    <li><a>Ultraschall</a></li>
+                                    <li><a>Mikroskop</a></li>
+                                </ul>
+                            </aside>
                         </div>
                     </div>
-                    <div class="tile is-parent">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="~assets/tierklinik/sylvia.jpg" alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3 class="title">Dr. Sylvia Tschabrun</h3>
-                                    <h5 class="subtitle">Fachtierärztin</h5>
-                                    Ihre Fachgebiete sind Orthopädie und innere Medizin, mit dem Schwerpunkt Kardiologie. Sie ist für das Management der Tierklinik zuständig.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tile is-parent">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="~assets/tierklinik/susanne.jpg" alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3 class="title">Mag. med. vet. Susanne Rath</h3>
-                                    <h5 class="subtitle">Tierärztin</h5>
-                                    Sie ist auf die Diagnose, Behandlung und Chirurgie von Hasen und Meerschweinchen spezialisiert. Ein weiteres ihrer Fachgebiete ist die Gastroenterologie der Hunde
-                                    und Katzen.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tile is-ancestor">
-                    <div class="tile is-parent">
-                        <div class="article card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="~assets/tierklinik/rudi.jpg" alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3 class="title">Dr. Rudolf Tschabrun</h3>
-                                    <h5 class="subtitle">Fachtierarzt</h5>
-                                    Er ist ein vielseitiger Chirurg, die Tätigkeit reicht von anspruchsvollen Tumoroperationen über Abdominalchirurgie bis zu aufwendigen Knochenoperationen. Ein
-                                    weiteres seiner Fachgebiete ist die Dermatologie.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tile is-parent">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="~assets/tierklinik/sylvia.jpg" alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3 class="title">Dr. Sylvia Tschabrun</h3>
-                                    <h5 class="subtitle">Fachtierärztin</h5>
-                                    Ihre Fachgebiete sind Orthopädie und innere Medizin, mit dem Schwerpunkt Kardiologie. Sie ist für das Management der Tierklinik zuständig.
+                    <div class="tile is-vertical is-8">
+                        <div v-for="section in story.content.sections" :key="section._uid" class="tile ">
+                            <div class="tile is-parent">
+                                <div class="tile is-child box">
+                                    <component :is="`${section.component.replace(/_/g, '-')}`" :blok="section"></component>
                                 </div>
                             </div>
                         </div>
@@ -135,22 +68,44 @@
 
 <script>
     import PageHero from '@/components/PageHero'
+    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+    import Navigation from '@/components/Navigation.vue'
 
     export default {
-        components: { PageHero },
+        layout: 'default',
+        components: { PageHero, Navigation },
+        mixins: [storyblokLivePreview],
+        asyncData(context) {
+            let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+            let endpoint = `cdn/stories/leistungen`
+
+            return context.app.$storyapi
+                .get(endpoint, {
+                    version: version,
+                    cv: context.store.state.cacheVersion,
+                })
+                .then(res => {
+                    return res.data
+                })
+                .catch(res => {
+                    context.error({ statusCode: res.response.status, message: res.response.data })
+                })
+        },
         data() {
             return {
+                story: { content: { body: '' } },
                 menuOpen: false,
                 news: '',
             }
         },
-        mouted() {
-            console.log('mounted: leistungen', this)
-        },
-        methods: {
-            toggleMenu() {
-                this.menuOpen = !this.menuOpen
+        computed: {
+            image() {
+                return 'https:' + this.story.content.meta[0].image
             },
+        },
+
+        mounted() {
+            console.log('leistungen:', this.story)
         },
     }
 </script>

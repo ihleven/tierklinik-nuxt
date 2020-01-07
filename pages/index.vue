@@ -2,7 +2,11 @@
     <div>
         <TierklinikHero></TierklinikHero>
 
-        <section class="section is-medium">
+        <!-- <div v-editable="section"> -->
+        <component :is="`${section.component.replace(/_/g, '-')}`" v-for="section in story.content.sections" :key="section._uid" :blok="section"></component>
+        <!-- </div> -->
+
+        <!-- <section class="section is-medium">
             <div class="container">
                 <div class="columns">
                     <div class="intro column is-8 is-offset-2">
@@ -14,23 +18,21 @@
                         </p>
                     </div>
                 </div>
-                <!-- <h1 class="title is-spaced">Section</h1>
-                <h2 class="subtitle">
-                    In unserer Tierklinik steht die persönliche Betreuung im Vordergrund. Unser Team besteht aus drei Tierärzten und zwei Ordinationshilfen und wir versuchen, individuell auf ihre
-                    Wünsche einzugehen. Wir möchten, dass Sie und Ihr Tier sich in unserer Tierklinik wohl fühlen.
-                </h2> -->
 
+            </div>
+        </section> -->
+
+        <!-- <section class="section is-medium">
+            <div class="container">
                 <div class="tile is-ancestor">
                     <div class="tile is-vertical is-8">
                         <div class="tile">
                             <div class="tile is-parent is-vertical">
-                                <article class="tile is-child notification is-primary">
-                                    <p class="title">Vertical...</p>
-                                    <p class="subtitle">Top tile</p>
-                                </article>
-                                <article class="tile is-child card">
+                                <article class="tile is-child card is-shady">
                                     <div class="card-image">
-                                        <figure class="image"></figure>
+                                        <figure class="image is-4by3">
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+                                        </figure>
                                     </div>
                                     <div class="card-content">
                                         <div class="content">In der Chirurgie sind wir ein erfahrenes Team und wir führen sichere Narkosen durch.</div>
@@ -46,7 +48,7 @@
                                     </div>
                                     <div class="card-content">
                                         <div class="content">
-                                            <!-- <h4>Tristique senectus et netus et.</h4> -->
+
                                             <p>
                                                 Modernste Geräte, wie digitales Röntgen, eigene Blutanalysegeräte und Ultraschall beschleunigen die Diagnosen.
                                             </p>
@@ -191,8 +193,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
+        <hr />
         <section class="section container">
             <div class="intro column is-8 is-offset-2">
                 <h2 class="title">Und hier die zweite überschrift</h2>
@@ -262,27 +265,17 @@
                             </article>
                         </div>
                     </div>
-                    <div class="tile is-parent is-shady">
-                        <article class="tile is-child notification is-white">
-                            <div class="content">
-                                <p class="title">Tall column</p>
-                                <p class="subtitle">With even more content</p>
-                                <div class="content">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam,
-                                        consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.
-                                    </p>
-                                    <p>
-                                        Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor
-                                        lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus
-                                        dignissim turpis. Sed eget varius ligula, at volutpat tortor.
-                                    </p>
-                                    <p>
-                                        Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque
-                                        sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child panel is-white">
+                            <p class="panel-heading">
+                                Bereiteen Sie sich auf den Besuch bei uns vor.
+                            </p>
+                            <a class="panel-block">
+                                <span class="panel-icon">
+                                    <i class="fas fa-book" aria-hidden="true"></i>
+                                </span>
+                                Wie kann ich mich anmelden?
+                            </a>
                         </article>
                     </div>
                 </div>
@@ -334,6 +327,7 @@
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio
                                     quis feugiat facilisis.
                                 </p>
+                                <img v-for="(item, index) in items" class="preview-img-item" :src="item.src" @click="$photoswipe.open(index, items)" />
                             </div>
                         </article>
                     </div>
@@ -344,136 +338,52 @@
 </template>
 
 <script>
-    import api from '~/plugins/axios'
+    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
     import TierklinikHero from '@/components/TierklinikHero'
 
     export default {
         layout: 'default',
         components: { TierklinikHero },
-        asyncData({ params }) {
-            return api.get(`pages/5`).then(res => {
-                return { title: res.data.title }
-            })
+        mixins: [storyblokLivePreview],
+        asyncData(context) {
+            let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+            let endpoint = `cdn/stories/home`
+
+            return context.app.$storyapi
+                .get(endpoint, {
+                    version: version,
+                    cv: context.store.state.cacheVersion,
+                })
+                .then(res => {
+                    return res.data
+                })
+                .catch(res => {
+                    context.error({ statusCode: res.response.status, message: res.response.data })
+                })
         },
+
         data() {
-            return { project: 'default' }
+            return {
+                project: 'default',
+                items: [
+                    {
+                        src: 'https://i.picsum.photos/id/395/640/480.jpg',
+                        w: 1024,
+                        h: 768,
+                    },
+                    {
+                        src: 'https://i.picsum.photos/id/237/640/480.jpg',
+                        w: 1024,
+                        h: 768,
+                    },
+                ],
+            }
+        },
+        mounted() {
+            console.log('homepage:', this.story)
+        },
+        methods: {
+            open() {},
         },
     }
 </script>
-
-<style>
-    html {
-        font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        font-size: 16px;
-        word-spacing: 1px;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        box-sizing: border-box;
-    }
-
-    *,
-    *:before,
-    *:after {
-        box-sizing: border-box;
-        margin: 0;
-    }
-
-    .button--green {
-        display: inline-block;
-        border-radius: 4px;
-        border: 1px solid #3b8070;
-        color: #3b8070;
-        text-decoration: none;
-        padding: 10px 30px;
-    }
-
-    .button--green:hover {
-        color: #fff;
-        background-color: #3b8070;
-    }
-
-    .button--grey {
-        display: inline-block;
-        border-radius: 4px;
-        border: 1px solid #35495e;
-        color: #35495e;
-        text-decoration: none;
-        padding: 10px 30px;
-        margin-left: 15px;
-    }
-
-    .button--grey:hover {
-        color: #fff;
-        background-color: #35495e;
-    }
-</style>
-
-<style>
-    html,
-    body {
-        background: #eff3f4;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    }
-
-    .features {
-        padding: 5rem 0;
-    }
-    .box.cta {
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-    }
-    .card-image > .fa {
-        font-size: 8rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        color: #209cee;
-    }
-    .card-content .content {
-        font-size: 14px;
-        margin: 1rem 1rem;
-    }
-    .card-content .content h4 {
-        font-size: 16px;
-        font-weight: 700;
-    }
-    .card {
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
-        margin-bottom: 2rem;
-    }
-    .intro {
-        padding: 5rem 0;
-        text-align: center;
-    }
-    .sandbox {
-        padding: 5rem 0;
-    }
-    .tile.notification {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-    .is-shady {
-        animation: flyintoright 0.4s backwards;
-        background: #fff;
-        box-shadow: rgba(0, 0, 0, 0.1) 0 1px 0;
-        border-radius: 4px;
-        display: inline-block;
-        margin: 10px;
-        position: relative;
-        transition: all 0.2s ease-in-out;
-    }
-    .is-shady:hover {
-        box-shadow: 0 10px 16px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.19);
-    }
-    /*adds font awesome stars*/
-    footer li:before {
-        content: '\f1b2';
-        font-family: 'FontAwesome';
-        float: left;
-        margin-left: -1.5em;
-        color: #147efb;
-    }
-</style>

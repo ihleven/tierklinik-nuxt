@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHero :img="hero_image.meta.download_url" :heading="hero_heading"></PageHero>
+        <PageHero img="hero_image.meta.download_url" heading="hero_heading"></PageHero>
 
         <nav class="navbar">
             <div class="container">
