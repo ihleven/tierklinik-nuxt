@@ -4,18 +4,25 @@
 
         <PageHero :img="story.content.hero_image" :heading="story.content.hero_title"></PageHero>
 
-        <component :is="`${section.component.replace(/_/g, '-')}`" v-for="section in story.content.sections" :key="section._uid" :blok="section"></component>
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="min-height:3.25rem;box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);">
+            <!--background: #eff3f4;-->
+            <a v-for="item in submenu" :key="item._uid" class="navbar-item" @click="scrollTo(item.config[0].nav_item)">
+                <h4 class="subtitle is-5">{{ item.config[0].nav_item }}</h4>
+            </a>
+        </nav>
+        <component :is="`${section.component.replace(/_/g, '-')}`" v-for="section in story.content.sections" :key="section._uid" :ref="navItem(section)" :blok="section"></component>
     </div>
 </template>
 
 <script>
+    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
     import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
-    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+    import Breadcrumbs from '@/components/Breadcrumbs'
 
     export default {
         layout: 'default',
-        components: { Navigation, PageHero },
+        components: { Navigation, PageHero, Breadcrumbs },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -44,10 +51,27 @@
             image() {
                 return 'https:' + this.story.content.meta[0].image
             },
+            submenu() {
+                return this.story.content.sections.filter(s => s.component == 'chapter_intro')
+            },
         },
 
         mounted() {
-            console.log('mounted:', this.story)
+            this.story.content.sections.forEach(element => {
+                console.log('element:', element)
+            })
+            console.log('mounted:', this.submenu)
+        },
+        methods: {
+            scrollTo(anchor) {
+                let element = document.getElementById(`${anchor}`)
+                console.log(anchor, element)
+
+                element.scrollIntoView({ block: 'start', behavior: 'smooth' })
+            },
+            navItem(section) {
+                if (section && section.config && section.config[0]) return section.config[0].nav_item
+            },
         },
     }
 </script>

@@ -19,12 +19,9 @@
                                     <li><a>Dermatologie</a></li>
                                     <li><a>Zahnbehandlungen</a></li>
                                     <li><a>Onkologie</a></li>
-                                    <li><a>Gyn</a></li>
-                                    <li><a>Behandlung und Chirurgie von Kaninchen und Meerschweinchen</a></li>
+                                    <li><a>Gynäkologie</a></li>
                                 </ul>
-                                <p class="menu-label">
-                                    Behandlung / Therapie
-                                </p>
+                                <p class="menu-label">Therapie</p>
                                 <ul class="menu-list">
                                     <li>
                                         <a class="is-active">Operationen</a>
@@ -48,10 +45,22 @@
                                     <li><a>Ultraschall</a></li>
                                     <li><a>Mikroskop</a></li>
                                 </ul>
+
+                                <p class="menu-label">
+                                    Patienten
+                                </p>
+                                <ul class="menu-list">
+                                    <li><a>Katzen</a></li>
+                                    <li><a>Hunde</a></li>
+                                    <li><a>Hasen</a></li>
+                                    <li><a>Kaninchen</a></li>
+                                    <li><a>Meerschweinchen</a></li>
+                                    <li><a>Hamster</a></li>
+                                </ul>
                             </aside>
                         </div>
                     </div>
-                    <div class="tile is-vertical is-8">
+                    <div class="tile is-vertical is-9">
                         <div v-for="section in story.content.sections" :key="section._uid" class="tile ">
                             <div class="tile is-parent">
                                 <div class="tile is-child box">

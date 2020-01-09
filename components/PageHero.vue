@@ -6,19 +6,23 @@
             <div class="container">
                 <h1 class="title is-1">
                     <span>{{ heading }}</span>
+                    <!-- <br />
+                    <span>{{ subheading }}</span> -->
                 </h1>
-                <!-- <h2 class="subtitle">Dr. Sylvia und Dr. Rudolf Tschabrun</h2> -->
+                <!-- <h2 class="subtitle">
+                    <span>{{ subheading }}</span>
+                </h2> -->
                 <!-- <h3 class="subtitle is-3">Kleintierklinik in Nüziders</h3> -->
             </div>
         </div>
 
         <div class="hero-foot">
-            <div class="box cta">
+            <!-- <div class="box cta">
                 <p class="has-text-centered">
                     <span class="tag is-primary">New</span>
                     {{ news || '' }} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
@@ -28,7 +32,7 @@
 
     export default {
         components: { Navigation },
-        props: ['img', 'heading'],
+        props: ['img', 'heading', 'subheading'],
         data() {
             return {
                 menuOpen: false,
@@ -44,7 +48,9 @@
 </script>
 
 <style lang="scss" scoped>
-    .hero-body .title span {
+    .hero-body .title span,
+    .hero-body .subtitle span {
+        font-family: 'Zilla Slab', Helvetica, sans-serif;
         color: hsl(192, 17%, 99%) !important;
         color: #fff;
         background-color: rgba(10, 10, 10, 0.7);

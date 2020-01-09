@@ -17,6 +17,7 @@ export default {
     css: [
         // Load a Node.js module directly (here it's a Sass file)
         //'bulma',
+        'typeface-clear-sans',
         '~/assets/styles/main.scss',
     ],
     proxy: {
@@ -27,7 +28,7 @@ export default {
             },
         },
     },
-    plugins: ['~/plugins/components', { src: '~/plugins/photoswipe', ssr: false }],
+    plugins: ['~plugins/filters.js', '~/plugins/components', { src: '~/plugins/photoswipe', ssr: false }],
     // plugins: ['@/plugins/gmaps'],
     router: {
         middleware: 'languageDetection',

@@ -1,5 +1,5 @@
 <template>
-    <section v-editable="blok" class="section">
+    <section :id="blok.config[0].nav_item" v-editable="blok" class="section">
         <div class="container intro">
             <h2 class="title is-spaced">{{ blok.headline }}</h2>
             <h4 class="subtitle">
