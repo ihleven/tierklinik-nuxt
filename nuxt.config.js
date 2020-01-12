@@ -10,7 +10,7 @@ export default {
     },
     modules: [
         //'@nuxtjs/axios',
-        '@nuxtjs/proxy',
+        //'@nuxtjs/proxy',
         '@nuxtjs/pwa',
         ['storyblok-nuxt', { accessToken: 'srr3G6rQFYrg7JXUzHfFNwtt', cacheProvider: 'memory' }],
     ],
