@@ -20,14 +20,15 @@ export default {
         'typeface-clear-sans',
         '~/assets/styles/main.scss',
     ],
-    proxy: {
-        '/api': {
-            target: 'http://tierklinik.webfactional.com',
-            pathRewrite: {
-                '^/api': '/api',
-            },
-        },
-    },
+    // proxy: {
+    //     '/api': {
+    //         target: 'http://tierklinik.webfactional.com',
+    //         pathRewrite: {
+    //             '^/api': '/api',
+    //         },
+    //     },
+    // },
+    // package.json: "@nuxtjs/proxy": "^1.3.3",
     plugins: ['~plugins/filters.js', '~/plugins/components', { src: '~/plugins/photoswipe', ssr: false }],
     // plugins: ['@/plugins/gmaps'],
     router: {
