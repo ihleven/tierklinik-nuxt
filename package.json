@@ -6,6 +6,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
+  "engines": { "node": "12.x" },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "axios": "^0.19.0",
