@@ -2,7 +2,7 @@
   "name": "tierklinik-nuxt-app",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
