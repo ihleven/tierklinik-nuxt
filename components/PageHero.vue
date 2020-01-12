@@ -66,7 +66,7 @@
     .hero {
         background-size: cover;
         background-position: 50% 50%;
-        background-image: url('~assets/tierklinik/teaser-katze.jpg');
+        background-image: url('http://a.storyblok.com/f/72564/2404x1745/acf542d718/stock-2404x1745-teaser-katze-hintergrund-grau.jpg');
 
         .navbar {
             background: rgba(250, 250, 250, 0.9);

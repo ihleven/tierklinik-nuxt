@@ -19,3 +19,5 @@ dist
 
 # @nuxtjs/pwa
 sw.*
+
+pages/team.vue

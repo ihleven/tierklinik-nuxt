@@ -75,14 +75,3 @@
         },
     }
 </script>
-
-<style>
-    .hero {
-        background-size: cover;
-        background-position: 50% 50%;
-        /* background-image: url('~assets/tierklinik/team.jpg'); */
-    }
-    .team {
-        padding: 3rem 1rem;
-    }
-</style>
