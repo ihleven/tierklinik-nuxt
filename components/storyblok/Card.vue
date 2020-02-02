@@ -8,9 +8,9 @@
 
         <div class="card-content">
             <div class="content">
-                <p class="title is-4">{{ blok.headline }}</p>
-                <p class="subtitle is-6">{{ blok.subline }}</p>
-                <p>{{ blok.text }}</p>
+                <h5 class="title is-4">{{ blok.headline }}</h5>
+                <h6 class="subtitle is-6">{{ blok.subline }}</h6>
+                <p class="body">{{ blok.text }}</p>
             </div>
 
             <p v-if="blok.link && blok.link.url">

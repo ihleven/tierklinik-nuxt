@@ -2,15 +2,16 @@
     <div>
         <Navigation />
 
-        <PageHero :img="story.content.hero_image" :heading="story.content.hero_title"></PageHero>
+        <PageHero :image="story.content.hero_image" :heading="story.content.hero_title"></PageHero>
 
-        <nav class="navbar" role="navigation" aria-label="main navigation" style="min-height:3.25rem;box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);">
+        <nav class="navbar page" role="navigation" aria-label="main navigation" style="min-height:3.25rem;box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);">
             <!--background: #eff3f4;-->
             <a v-for="item in submenu" :key="item._uid" class="navbar-item" @click="scrollTo(item.config[0].nav_item)">
                 <h4 class="subtitle is-5">{{ item.config[0].nav_item }}</h4>
             </a>
         </nav>
         <component :is="`${section.component.replace(/_/g, '-')}`" v-for="section in story.content.sections" :key="section._uid" :ref="navItem(section)" :blok="section"></component>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -19,10 +20,11 @@
     import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Breadcrumbs from '@/components/Breadcrumbs'
+    import Footer from '@/components/Footer'
 
     export default {
         layout: 'default',
-        components: { Navigation, PageHero, Breadcrumbs },
+        components: { Navigation, PageHero, Breadcrumbs, Footer },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -75,3 +77,28 @@
         },
     }
 </script>
+<style lang="scss">
+    .tile {
+        &.is-ancestor {
+            justify-content: space-evenly;
+        }
+    }
+    .navbar.page {
+        display: flex;
+        justify-content: center;
+        min-height: 3.25rem;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+        align-items: strech;
+        .navbar-item {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .card-content {
+        .content {
+            .body {
+                font: 1rem/1.25 Helvetica;
+            }
+        }
+    }
+</style>

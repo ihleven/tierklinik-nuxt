@@ -2,10 +2,11 @@ import Vue from 'vue'
 import Feature from '~/components/storyblok/Feature.vue'
 import Box from '~/components/storyblok/Box.vue'
 import Card from '~/components/storyblok/Card.vue'
-import Grid from '~/components/storyblok/Grid.vue'
+import Columns from '~/components/storyblok/Columns.vue'
+import Column from '~/components/storyblok/Column.vue'
 import Page from '~/components/storyblok/Page.vue'
 import Media from '~/components/storyblok/Media.vue'
-import Slide from '~/components/storyblok/Slide.vue'
+// import Slide from '~/components/storyblok/Slide.vue'
 import Teaser from '~/components/storyblok/Teaser.vue'
 import SectionIntro from '~/components/storyblok/SectionIntro.vue'
 import Sprechzeiten from '~/components/storyblok/Sprechzeiten.vue'
@@ -15,16 +16,18 @@ import Tile from '~/components/storyblok/Tile.vue'
 import Title from '~/components/storyblok/Title.vue'
 import Subtitle from '~/components/storyblok/Subtitle.vue'
 import ElementContent from '~/components/storyblok/ElementContent.vue'
-import Leistung from '~/components/storyblok/Leistung.vue'
+// import Leistung from '~/components/storyblok/Leistung.vue'
+import Paragraph from '~/components/storyblok/Paragraph.vue'
 
 Vue.component('feature', Feature)
 Vue.component('box', Box)
 Vue.component('card', Card)
 Vue.component('flex-card', Card)
-Vue.component('grid', Grid)
+Vue.component('columns', Columns)
+Vue.component('column', Column)
 Vue.component('page', Page)
 Vue.component('media', Media)
-Vue.component('slide', Slide)
+// Vue.component('slide', Slide)
 Vue.component('teaser', Teaser)
 Vue.component('sprechzeiten', Sprechzeiten)
 Vue.component('chapter-intro', SectionIntro)
@@ -34,4 +37,5 @@ Vue.component('Tile', Tile)
 Vue.component('main-title', Title)
 Vue.component('subtitle', Subtitle)
 Vue.component('element-content', ElementContent)
-Vue.component('Leistung', Leistung)
+// Vue.component('Leistung', Leistung)
+Vue.component('Paragraph', Paragraph)

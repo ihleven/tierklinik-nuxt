@@ -6,6 +6,10 @@ export const state = () => ({
         main_navi: [],
     },
     authors: {},
+    categories: [],
+    categoryByName: {},
+    categoryByUuid: {},
+    ratgeberCategories: ['hunde', 'katzen'],
 })
 
 export const mutations = {
@@ -25,14 +29,18 @@ export const mutations = {
         // authors.forEach(a => (authorMap[a.content._uid] = a.content))
         // state.authors = authorMap
     },
+    setCategories(state, stories) {
+        state.categories = stories
+        stories.forEach(category => (state.categoryByName[category.slug] = category))
+        stories.forEach(category => (state.categoryByUuid[category.uuid] = category))
+    },
 }
 
 export const actions = {
-    async nuxtServerInit({ commit, dispatch }, { req }) {
-        // if (false) {
-        //     commit('date', new Date())
-        // }
-        await dispatch('loadAuthors')
+    async nuxtServerInit({ dispatch }, { req }) {
+        console.log('nuxtServerINIT loading..................', req)
+        // await dispatch('loadAuthors')
+        await dispatch('loadCategories')
     },
     loadAuthors({ commit }) {
         return this.$storyapi
@@ -42,6 +50,16 @@ export const actions = {
             })
             .then(res => {
                 commit('setAuthors', res.data.stories)
+            })
+    },
+    loadCategories({ commit }) {
+        return this.$storyapi
+            .get(`cdn/stories`, {
+                // version: context.version,
+                starts_with: 'categories',
+            })
+            .then(res => {
+                commit('setCategories', res.data.stories)
             })
     },
     loadSettings({ commit }, context) {

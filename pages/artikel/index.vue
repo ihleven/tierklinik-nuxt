@@ -1,7 +1,7 @@
 <template>
     <main>
         <Navigation />
-        <PageHero :img="story.content.hero_image | transformImage('0x1000/smart')" :heading="story.content.hero_headline"></PageHero>
+        <PageHero :image="story.content.hero_image | transformImage('0x1000/smart')" :heading="story.content.hero_headline"></PageHero>
 
         <section class="section">
             <div class="container">

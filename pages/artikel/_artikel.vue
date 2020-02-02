@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navigation />
-        <PageHero :img="story.content.image | transformImage('0x1000/smart')" :heading="story.content.title" :subheading="story.content.subtitle"></PageHero>
+        <PageHero :image="story.content.image" :heading="story.content.title" :subheading="story.content.subtitle"></PageHero>
         <Breadcrumbs />
 
         {{ author }}

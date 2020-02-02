@@ -1,13 +1,13 @@
 <template>
-    <section class="hero is-medium is-transparent" :style="{ 'background-image': 'url(http:' + img + ')' }">
+    <section class="hero is-medium is-transparent" :style="{ 'background-image': 'url(' + resizedImage + ')' }">
         <div class="hero-head"></div>
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container">
                 <h1 class="title is-1">
                     <span>{{ heading }}</span>
-                    <!-- <br />
-                    <span>{{ subheading }}</span> -->
+                    <br />
+                    <span v-if="subheading">{{ subheading }}</span>
                 </h1>
                 <!-- <h2 class="subtitle">
                     <span>{{ subheading }}</span>
@@ -28,20 +28,16 @@
 </template>
 
 <script>
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
 
     export default {
-        components: { Navigation },
-        props: ['img', 'heading', 'subheading'],
-        data() {
-            return {
-                menuOpen: false,
-                news: null,
-            }
-        },
-        methods: {
-            toggleMenu() {
-                this.menuOpen = !this.menuOpen
+        // components: { Navigation },
+        props: ['image', 'heading', 'subheading'],
+        computed: {
+            resizedImage() {
+                let imageService = '//img2.storyblok.com/',
+                    option = '1600x600/smart'
+                return this.image.replace('//a.storyblok.com', imageService + option)
             },
         },
     }
