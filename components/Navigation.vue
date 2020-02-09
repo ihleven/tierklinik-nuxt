@@ -7,7 +7,10 @@
 
                     <h1 class="title is-4">
                         Tierklinik
-                        <div class="subtitle is-6">Tschabrun</div>
+                        <div class="subtitle is-6">
+                            Tschabrun
+                            <small style="color: #aaa">.com</small>
+                        </div>
                     </h1>
                 </a>
 

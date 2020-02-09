@@ -1,5 +1,9 @@
 <template>
-    <div>article {{ article }}</div>
+    <article v-if="article.content">
+        <h1 class="title">{{ article.content.title }}</h1>
+
+        <div class="content" v-html="content"></div>
+    </article>
 </template>
 
 <script>
@@ -8,6 +12,11 @@
     export default {
         mixins: [storyblokLivePreview],
         props: ['article'],
+        computed: {
+            content() {
+                return this.article ? this.$storyapi.richTextResolver.render(this.article.content.content) : ''
+            },
+        },
     }
 </script>
 

@@ -15,7 +15,7 @@
             </ul>
         </div>
 
-        <nuxt-child :categories="categories" />
+        <nuxt-child :categories="categories" :heading="story.content.heading" />
 
         <Footer></Footer>
     </div>

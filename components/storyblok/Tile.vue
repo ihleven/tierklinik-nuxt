@@ -19,9 +19,9 @@
                 return parent + vertical + size
             },
         },
-        mounted() {
-            console.log('tile:', this.blok.is_parent, this.blok.is_vertical, this.blok.size, this.blok.tiles)
-        },
+        // mounted() {
+        //     console.log('tile:', this.blok.is_parent, this.blok.is_vertical, this.blok.size, this.blok.tiles)
+        // },
     }
 </script>
 

@@ -197,34 +197,89 @@
 
         <hr />
         <section class="section container">
-            <div class="intro column is-8 is-offset-2">
-                <h2 class="title">Und hier die zweite überschrift</h2>
-                <br />
-                <p class="subtitle">Hier kommt dann ein weiterfuehrender Text, der auf den letzten Inhlatsblock der Startseite hinweist.</p>
+            <div class="intro column is-8 is-offset-2 has-text-centered">
+                <h2 class="title">Informationen zur Vorbereitung Ihres Besuchs bei uns.</h2>
+
+                <p class="subtitle">Terminvereinbarung unter +43.5522.44264. Notfälle auch außerhalb der Ordination nach telefonischer Voranmeldung.</p>
             </div>
+
             <div class="sandbox">
                 <div class="tile is-ancestor">
-                    <div class="tile is-parent is-shady">
-                        <article class="tile is-child notification is-white">
-                            <p class="title">Hello World</p>
-                            <p class="subtitle">What is up?</p>
+                    <div class="tile is-parent ">
+                        <article class="tile is-child box is-shady">
+                            <p class="title is-4 is-spaced">Kontaktaufnahme</p>
+                            <p class="subtitle">Telefonische Sprechzeiten</p>
+                            <p class="content">
+                                Sie erreichen uns an <b>Wochentagen</b>von <br /><br />
+                                <b>07:30 Uhr bis 19:00 Uhr</b> <br /><br />
+                                sowie Samstags von 07:30 Uhr bis 11:00 Uhr unter der Praxisnummer. Natürlich können Sie jederzeit per Email mail@tierklinik-tschabrun.com
+                            </p>
                         </article>
                     </div>
-                    <div class="tile is-parent is-shady">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-info">
+                            <p class="title">Praxisnummer</p>
+                            <p class="subtitle">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-phone"
+                                >
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    ></path></svg
+                                >+43 5552 66755
+                            </p>
+                        </article>
                         <article class="tile is-child notification is-white">
-                            <p class="title">Foo</p>
-                            <p class="subtitle">Bar</p>
+                            <p class="subtitle is-4">Sprechzeiten</p>
+
+                            <p>An Wochentagen erreichen Sie uns von</p>
+                            <p><b>07:30 Uhr bis 19:00 Uhr</b>.</p>
+                            Samstags erreichen Sie uns von<br /><br />
+                            <b> 07:30 Uhr bis 11:00 Uhr</b>. <br /><br />
+                            Natürlich können Sie jederzeit per Email mail@tierklinik-tschabrun.com
                         </article>
                     </div>
-                    <div class="tile is-parent is-shady">
-                        <article class="tile is-child notification is-white">
-                            <p class="title">Third column</p>
-                            <p class="subtitle">With some content</p>
-                            <div class="content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio
-                                    quis feugiat facilisis.
+                    <div class="tile is-parent ">
+                        <article class="tile is-child card is-shady">
+                            <div class="card-image notification is-info has-text-centered" style="border-bottom-left-radius:0;border-bottom-right-radius:0">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-phone"
+                                >
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    ></path>
+                                </svg>
+                                <p class="title is-4">Praxisnummer</p>
+                                <p class="subtitle is-3">
+                                    +43 5552 66755
                                 </p>
+                            </div>
+                            <div class="card-content">
+                                <p class="subtitle is-4">Sprechzeiten</p>
+
+                                <p>An Wochentagen erreichen Sie uns von</p>
+                                <p><b>07:30 Uhr bis 19:00 Uhr</b>.</p>
+                                Samstags erreichen Sie uns von<br /><br />
+                                <b> 07:30 Uhr bis 11:00 Uhr</b>. <br /><br />
+                                Natürlich können Sie jederzeit per Email mail@tierklinik-tschabrun.com
                             </div>
                         </article>
                     </div>
@@ -233,13 +288,30 @@
                     <div class="tile is-vertical is-8">
                         <div class="tile">
                             <div class="tile is-parent is-vertical">
-                                <article class="tile is-child notification is-white">
-                                    <p class="title">Vertical tiles</p>
-                                    <p class="subtitle">Top box</p>
+                                <article class="tile is-child notification is-info">
+                                    <p class="title">Praxisnummer</p>
+                                    <p class="subtitle">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="36"
+                                            height="36"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="feather feather-phone"
+                                        >
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                            ></path></svg
+                                        >+43 5552 66755
+                                    </p>
                                 </article>
-                                <article class="tile is-child notification is-white">
-                                    <p class="title">Vertical tiles</p>
-                                    <p class="subtitle">Bottom box</p>
+                                <article class="tile is-child notification is-danger">
+                                    <p class="title">Notdienst</p>
+                                    Außerhalb der Sprechzeiten bieten wir eine Notfallversorgung (Praxis-Nummer, Notdienstgebühr)
                                 </article>
                             </div>
                             <div class="tile is-parent">

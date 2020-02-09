@@ -9,7 +9,8 @@ import Media from '~/components/storyblok/Media.vue'
 // import Slide from '~/components/storyblok/Slide.vue'
 import Teaser from '~/components/storyblok/Teaser.vue'
 import SectionIntro from '~/components/storyblok/SectionIntro.vue'
-import Sprechzeiten from '~/components/storyblok/Sprechzeiten.vue'
+import SectionTermine from '~/components/storyblok/SectionTermine.vue'
+import SectionBesuch from '~/components/storyblok/SectionBesuch.vue'
 import SectionTiles from '~/components/storyblok/SectionTiles.vue'
 import Section from '~/components/storyblok/Section.vue'
 import Tile from '~/components/storyblok/Tile.vue'
@@ -29,7 +30,8 @@ Vue.component('page', Page)
 Vue.component('media', Media)
 // Vue.component('slide', Slide)
 Vue.component('teaser', Teaser)
-Vue.component('sprechzeiten', Sprechzeiten)
+Vue.component('section-termine', SectionTermine)
+Vue.component('section-besuch', SectionBesuch)
 Vue.component('chapter-intro', SectionIntro)
 Vue.component('section-tiles', SectionTiles)
 Vue.component('page-section', Section)

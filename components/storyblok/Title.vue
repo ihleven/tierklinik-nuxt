@@ -13,7 +13,7 @@
             },
         },
         mounted() {
-            console.log('tile:', this.blok.is_parent, this.blok.is_vertical, this.blok.size, this.blok.tiles)
+            console.log(' * title:', this.blok)
         },
     }
 </script>

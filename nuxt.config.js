@@ -13,6 +13,13 @@ export default {
         //'@nuxtjs/proxy',
         '@nuxtjs/pwa',
         ['storyblok-nuxt', { accessToken: 'srr3G6rQFYrg7JXUzHfFNwtt', cacheProvider: 'memory' }],
+        // With options
+        [
+            'nuxt-leaflet',
+            {
+                /* module options */
+            },
+        ],
     ],
     css: [
         // Load a Node.js module directly (here it's a Sass file)
@@ -33,5 +40,6 @@ export default {
     // plugins: ['@/plugins/gmaps'],
     router: {
         middleware: 'languageDetection',
+        linkActiveClass: 'is-active',
     },
 }

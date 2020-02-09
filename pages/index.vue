@@ -1,20 +1,23 @@
 <template>
     <div>
+        <!-- <TopBar></TopBar> -->
         <TierklinikHero></TierklinikHero>
 
         <component :is="`${section.component.replace(/_/g, '-')}`" v-for="section in story.content.sections" :key="section._uid" :blok="section"></component>
+
         <Footer></Footer>
     </div>
 </template>
 
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+    import TopBar from '@/components/TopBar'
     import TierklinikHero from '@/components/TierklinikHero'
     import Footer from '@/components/Footer'
 
     export default {
         layout: 'default',
-        components: { TierklinikHero, Footer },
+        components: { TopBar, TierklinikHero, Footer },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -58,3 +61,10 @@
         },
     }
 </script>
+
+<style lang="scss" scoped>
+    .panel-block {
+        background-color: white;
+        padding: 0.75rem 1rem;
+    }
+</style>

@@ -1,49 +1,46 @@
 <template>
-    <section class="hero is-medium is-transparent" :style="{ 'background-image': 'url(' + resizedImage + ')' }">
-        <div class="hero-head"></div>
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title is-1">
-                    <span>{{ heading }}</span>
-                    <br />
-                    <span v-if="subheading">{{ subheading }}</span>
-                </h1>
-                <!-- <h2 class="subtitle">
-                    <span>{{ subheading }}</span>
-                </h2> -->
-                <!-- <h3 class="subtitle is-3">Kleintierklinik in Nüziders</h3> -->
-            </div>
-        </div>
-
-        <div class="hero-foot">
-            <!-- <div class="box cta">
-                <p class="has-text-centered">
-                    <span class="tag is-primary">New</span>
-                    {{ news || '' }} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-            </div> -->
-        </div>
-    </section>
+    <span class="icon">
+        <i class="fas fa-home"></i>
+        <svg
+            v-if="name == 'minus-square'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-minus-square"
+        >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+        <svg
+            v-else-if="name == 'plus-square'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-plus-square"
+        >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+    </span>
 </template>
 
 <script>
-    // import Navigation from '@/components/Navigation.vue'
-
     export default {
-        // components: { Navigation },
-        props: {
-            image: { type: String, default: 'http://a.storyblok.com/f/72564/2404x1745/acf542d718/stock-2404x1745-teaser-katze-hintergrund-grau.jpg' },
-            heading: String,
-            subheading: String,
-        },
-        computed: {
-            resizedImage() {
-                let imageService = '//img2.storyblok.com/',
-                    option = '1600x600/smart'
-                return this.image.replace('//a.storyblok.com', imageService + option)
-            },
-        },
+        props: ['name', 'heading', 'subheading'],
+        computed: {},
     }
 </script>
 

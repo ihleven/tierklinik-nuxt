@@ -43,11 +43,7 @@
                 })
         },
         data() {
-            return {
-                story: { content: { body: '' } },
-                menuOpen: false,
-                news: '',
-            }
+            return {}
         },
         computed: {
             image() {
