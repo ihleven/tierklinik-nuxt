@@ -10,6 +10,7 @@ export const state = () => ({
     categoryByName: {},
     categoryByUuid: {},
     ratgeberCategories: ['hunde', 'katzen'],
+    lostAndFound: [],
 })
 
 export const mutations = {
@@ -34,6 +35,9 @@ export const mutations = {
         stories.forEach(category => (state.categoryByName[category.slug] = category))
         stories.forEach(category => (state.categoryByUuid[category.uuid] = category))
     },
+    setLostAndFound(state, stories) {
+        state.lostAndFound = stories
+    },
 }
 
 export const actions = {
@@ -41,6 +45,7 @@ export const actions = {
         console.log('nuxtServerINIT loading..................', req)
         // await dispatch('loadAuthors')
         await dispatch('loadCategories')
+        await dispatch('loadLostAndFound')
     },
     loadAuthors({ commit }) {
         return this.$storyapi
@@ -74,5 +79,16 @@ export const actions = {
                     commit('setSettings', res.data.story.content)
                 })
         )
+    },
+    loadLostAndFound({ commit, state }, context) {
+        return this.$storyapi
+            .get(`cdn/stories`, {
+                // version: context.version,
+                cv: state.cacheVersion,
+                starts_with: 'lostandfound',
+            })
+            .then(res => {
+                commit('setLostAndFound', res.data.stories)
+            })
     },
 }

@@ -1,6 +1,8 @@
 <template>
     <section class="hero is-medium is-transparent" :style="{ 'background-image': 'url(' + resizedImage + ')' }">
-        <div class="hero-head"></div>
+        <div class="hero-head">
+            <!-- <Navigation /> -->
+        </div>
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container">
@@ -28,6 +30,7 @@
 </template>
 
 <script>
+    // import TopBar from '@/components/TopBar.vue'
     // import Navigation from '@/components/Navigation.vue'
 
     export default {

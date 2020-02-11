@@ -11,31 +11,48 @@
 
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-    import TopBar from '@/components/TopBar'
+    // import TopBar from '@/components/TopBar'
     import TierklinikHero from '@/components/TierklinikHero'
     import Footer from '@/components/Footer'
 
     export default {
-        layout: 'default',
-        components: { TopBar, TierklinikHero, Footer },
+        layout: 'start',
+        components: { TierklinikHero, Footer },
         mixins: [storyblokLivePreview],
-        asyncData(context) {
+        // asyncData(context) {
+        //     let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+        //     let endpoint = `cdn/stories/home`
+
+        //     return context.app.$storyapi
+        //         .get(endpoint, {
+        //             version: version,
+        //             cv: context.store.state.cacheVersion,
+        //         })
+        //         .then(res => {
+        //             return res.data
+        //         })
+        //         .catch(res => {
+        //             context.error({ statusCode: res.response.status, message: res.response.data })
+        //         })
+        // },
+        async asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-            let endpoint = `cdn/stories/home`
 
-            return context.app.$storyapi
-                .get(endpoint, {
-                    version: version,
-                    cv: context.store.state.cacheVersion,
-                })
-                .then(res => {
-                    return res.data
-                })
-                .catch(res => {
-                    context.error({ statusCode: res.response.status, message: res.response.data })
-                })
+            let index = await context.app.$storyapi.get('cdn/stories/home', {
+                version: version,
+                cv: context.store.state.cacheVersion,
+            })
+            let lostFound = await context.app.$storyapi.get('cdn/stories', {
+                version: version,
+                starts_with: 'lostandfound',
+                cv: context.store.state.cacheVersion,
+            })
+
+            return {
+                story: index.data.story,
+                lost: lostFound.data.stories,
+            }
         },
-
         data() {
             return {
                 project: 'default',
@@ -54,7 +71,7 @@
             }
         },
         mounted() {
-            console.log('homepage:', this.story)
+            console.log('homepage:', this.story, this.lost)
         },
         methods: {
             open() {},

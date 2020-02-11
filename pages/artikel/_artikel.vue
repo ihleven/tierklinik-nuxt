@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navigation />
+        <!-- <Navigation /> -->
         <PageHero :image="story.content.image" :heading="story.content.title" :subheading="story.content.subtitle"></PageHero>
         <Breadcrumbs />
 
@@ -19,12 +19,12 @@
 
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Breadcrumbs from '@/components/Breadcrumbs'
 
     export default {
-        components: { Navigation, PageHero, Breadcrumbs },
+        components: { PageHero, Breadcrumbs },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             return context.app.$storyapi

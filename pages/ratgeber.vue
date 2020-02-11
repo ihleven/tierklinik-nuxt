@@ -1,7 +1,5 @@
 <template>
     <div>
-        <Navigation />
-
         <PageHero :image="image" :heading="story.content.hero_headline" :subheading="subheading"></PageHero>
 
         <div class="tabs is-boxed">
@@ -24,13 +22,16 @@
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Footer from '@/components/Footer'
 
     export default {
         layout: 'default',
-        components: { Navigation, PageHero, Footer },
+        components: {
+            PageHero,
+            Footer,
+        },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -80,7 +81,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .category card-image {
         /* width: 240px; */
         /* height: 160px; */

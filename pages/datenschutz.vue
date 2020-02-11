@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navigation />
+        <!-- <Navigation /> -->
         <PageHero :image="image" :heading="title" :subheading="subtitle"></PageHero>
 
         <section class="section"></section>
@@ -11,12 +11,12 @@
 
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Footer from '@/components/Footer'
     export default {
         layout: 'default',
-        components: { Navigation, PageHero, Footer },
+        components: { PageHero, Footer },
         mixins: [storyblokLivePreview],
         // asyncData(context) {
         //     return context.app.$storyapi

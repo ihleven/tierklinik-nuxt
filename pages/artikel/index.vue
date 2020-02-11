@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Navigation />
+        <!-- <Navigation /> -->
         <PageHero :image="story.content.hero_image | transformImage('0x1000/smart')" :heading="story.content.hero_headline"></PageHero>
 
         <section class="section">
@@ -40,10 +40,10 @@
     </main>
 </template>
 <script>
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     export default {
-        components: { Navigation, PageHero },
+        components: { PageHero },
         async asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
             let index = await context.app.$storyapi.get('cdn/stories/posts/index', {

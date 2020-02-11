@@ -12,6 +12,7 @@ import SectionIntro from '~/components/storyblok/SectionIntro.vue'
 import SectionTermine from '~/components/storyblok/SectionTermine.vue'
 import SectionBesuch from '~/components/storyblok/SectionBesuch.vue'
 import SectionTiles from '~/components/storyblok/SectionTiles.vue'
+import SectionLostAndFound from '~/components/storyblok/SectionLostAndFound.vue'
 import Section from '~/components/storyblok/Section.vue'
 import Tile from '~/components/storyblok/Tile.vue'
 import Title from '~/components/storyblok/Title.vue'
@@ -33,6 +34,7 @@ Vue.component('teaser', Teaser)
 Vue.component('section-termine', SectionTermine)
 Vue.component('section-besuch', SectionBesuch)
 Vue.component('chapter-intro', SectionIntro)
+Vue.component('section-lost-found', SectionLostAndFound)
 Vue.component('section-tiles', SectionTiles)
 Vue.component('page-section', Section)
 Vue.component('Tile', Tile)

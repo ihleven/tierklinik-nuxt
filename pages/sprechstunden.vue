@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navigation />
+        <!-- <Navigation /> -->
 
         <PageHero heading="Sprechstunden"></PageHero>
         <section class="section">
@@ -144,13 +144,13 @@
 
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Footer from '@/components/Footer'
 
     export default {
         name: 'Sprechstunden',
-        components: { Navigation, PageHero, Footer },
+        components: { PageHero, Footer },
         mixins: [storyblokLivePreview],
         // asyncData(context) {
         //     let version = context.query._storyblok || context.isDev ? 'draft' : 'published'

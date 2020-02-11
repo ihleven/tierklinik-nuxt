@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Navigation />
         <PageHero :image="story.content.hero_image" :heading="story.content.hero_headline"></PageHero>
 
         <section class="section">
@@ -83,13 +82,13 @@
 
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-    import Navigation from '@/components/Navigation.vue'
+    // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Footer from '@/components/Footer'
 
     export default {
         layout: 'default',
-        components: { PageHero, Navigation, Footer },
+        components: { PageHero, Footer },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
