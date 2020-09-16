@@ -39,6 +39,7 @@
         </section>
     </main>
 </template>
+
 <script>
     // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'

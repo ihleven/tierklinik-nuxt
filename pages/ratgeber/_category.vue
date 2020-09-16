@@ -43,6 +43,10 @@
                     is_startpage: 0,
                 })
                 .then(res => {
+                    res.data.stories = [...res.data.stories].sort((a, b) => {
+                        // console.log(a.slug, b.slug)
+                        return a.slug > b.slug ? 1 : -1
+                    })
                     return res.data
                 })
                 .catch(res => {

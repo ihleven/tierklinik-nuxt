@@ -1,5 +1,9 @@
 {
-  "name": "tierklinik-nuxt-app",
+  "name": "tierklinik-tschabrun-website",
+  "version": "0.1.0",
+  "description": "Webseite der Tierklinik Tschabrun",
+  "author": "Matthias Ihle",
+  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt generate",
@@ -24,6 +28,7 @@
     "vue-simple-photoswipe": "^1.0.3",
     "vue2-google-maps": "^0.10.7"
   },
+  
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
