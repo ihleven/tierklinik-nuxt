@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHero :image="story.content.hero_image" :heading="story.content.hero_title"></PageHero>
+        <PageHero :image="story.content.hero_image" :heading="story.content.hero_headline"></PageHero>
 
         <nav class="navbar page" role="navigation" aria-label="main navigation" style="min-height:3.25rem;box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);">
             <!--background: #eff3f4;-->

@@ -11,6 +11,7 @@ export const state = () => ({
     categoryByUuid: {},
     ratgeberCategories: ['hunde', 'katzen'],
     lostAndFound: [],
+    announcements: [],
 })
 
 export const mutations = {
@@ -19,6 +20,9 @@ export const mutations = {
     },
     setLanguage(state, language) {
         state.language = language
+    },
+    setAnnouncement(state, announcements) {
+        state.announcements = announcements.map(a => this.$storyapi.richTextResolver.render(a.content.text))
     },
     setCacheVersion(state, version) {
         state.cacheVersion = version
@@ -46,6 +50,7 @@ export const actions = {
         // await dispatch('loadAuthors')
         await dispatch('loadCategories')
         await dispatch('loadLostAndFound')
+        await dispatch('loadAnnouncments')
     },
     loadAuthors({ commit }) {
         return this.$storyapi
@@ -65,6 +70,16 @@ export const actions = {
             })
             .then(res => {
                 commit('setCategories', res.data.stories)
+            })
+    },
+    loadAnnouncments({ commit }) {
+        return this.$storyapi
+            .get(`cdn/stories`, {
+                // version: context.version,
+                starts_with: 'ankuendigungen',
+            })
+            .then(res => {
+                commit('setAnnouncement', res.data.stories)
             })
     },
     loadSettings({ commit }, context) {

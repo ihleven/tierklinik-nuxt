@@ -31,23 +31,22 @@
                                 <!-- </p> -->
                             </article>
                             <article class="tile is-child box">
-                                Wir bitten um eine telefonische Terminvereinbarung.
+                                Innerhalb der Öffnungszeiten können Sie Medikamente und Futter ohne Voranmeldung abholen.
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title is-4">Telefonische Sprechzeiten</p>
+                                <p class="title is-4">Telefonische Terminvereinbarung</p>
 
-                                <p>An <b>Wochentagen</b> von <b>07:30 bis 19:00</b> Uhr.</p>
-                                <br />
-                                Samstags von <b>07:30 bis 11:00</b> Uhr.
+                                <p>Bitte vereinbaren Sie <strong>IMMER</strong> telefonisch einen Termin für Behandlungen und Impfungen.</p>
+                                <p>Auf diese Weise können wir lange Wartezeiten vermeiden und den Abstand im Wartezimmer wahren.</p>
                             </article>
                         </div>
                     </div>
 
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <h4 class="title">Ordinationszeiten</h4>
+                            <h4 class="title">Öffnungszeiten</h4>
                             <table class="table is-striped is-hoverable is-fullwidth">
                                 <thead>
                                     <tr>
@@ -66,33 +65,33 @@
                                 <tbody>
                                     <tr>
                                         <th>Montag</th>
-                                        <td>10h - 11h</td>
-                                        <td>15h - 19:30</td>
+                                        <td>9h - 11h</td>
+                                        <td>16h - 19h</td>
                                     </tr>
                                     <tr>
                                         <th>Dienstag</th>
-                                        <td>10h - 11h</td>
-                                        <td>15h - 19:30</td>
+                                        <td>9h - 11h</td>
+                                        <td>16h - 19h</td>
                                     </tr>
                                     <tr>
                                         <th>Mittwoch</th>
-                                        <td>10h - 11h</td>
-                                        <td>15h - 19:30</td>
+                                        <td>9h - 11h</td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <th>Donnerstag</th>
-                                        <td>10h - 11h</td>
-                                        <td>15h - 19:30</td>
+                                        <td>9h - 11h</td>
+                                        <td>16h - 19h</td>
                                     </tr>
                                     <tr>
                                         <th>Freitag</th>
-                                        <td>10h - 11h</td>
-                                        <td>Nach telefonischer Vereinbarung</td>
+                                        <td>9h - 11h</td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <th>Samstag</th>
-                                        <td>10h - 11h</td>
-                                        <td>15h - 19:30</td>
+                                        <td>9h - 11h</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -102,27 +101,27 @@
 
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child card is-shady">
-                        <div class="card-image notification is-danger has-text-centered" style="border-bottom-left-radius:0;border-bottom-right-radius:0">
-                            <p class="title is-4">Notfallversorgung</p>
-                            <p class="subtitle is-5">
-                                außerhalb der Sprechzeiten
-                            </p>
+                        <div class="card-image notification is-danger has-text-centered" style="border-bottom-left-radius:0;border-bottom-right-radius:0;margin-bottom: 0;">
+                            <p class="title">Notdienst</p>
+                            <!-- <p class="subtitle is-5">
+                                Außerhalb der Öffungszeiten
+                            </p> -->
                         </div>
                         <div class="card-content content is-medium">
-                            <div class="">
-                                <p>
-                                    Abends und nachts (Montag bis Freitag, 20h-7h), an Feiertag und an Wochenenden (Samstag 12h - Montag 7h) bieten wir Ihnen gegen eine zusätzliche Notfallgebühr eine
-                                    tierärztliche Notfallversorgung an.
-                                </p>
-                                <p>
-                                    Während dieser Zeiten erreichen Sie uns ebenfall unter der Praxisnummer, die wir dann einen unserer Tierarzte weiterleiten.
-                                </p>
-                            </div>
+                            <p>
+                                Außerhalb unserer Öffungszeiten können Sie uns unter 05552 66755 kontaktieren.
+                            </p>
+                            <p>
+                                In den meisten Zeiten erreichen Sie uns persönlich oder Sie erfahren auf Tonband die Telefonnummer des diensthabenden Tierarztes
+                            </p>
+                            <p>
+                                Im Notdiest verrechnen wir eine Notdienstgebühr.
+                            </p>
                         </div>
                     </article>
                     <div class="tile is-child  notification is-danger">
-                        <p class="title">Notdienst</p>
-                        Außerhalb der Sprechzeiten bieten wir eine Notfallversorgung (Praxis-Nummer, Notdienstgebühr)
+                        <p class="title">Achtung Termin</p>
+                        Am Samstag, dem 24. Oktober ist unsere Tierklinik nur für Futter- und Medikamentenabholungen geöffnet.
                     </div>
                 </div>
             </div>

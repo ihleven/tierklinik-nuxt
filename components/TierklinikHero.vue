@@ -10,10 +10,9 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-2">Kleintierklinik Nüziders</h1>
+                <h1 class="title is-2">Tierklinik Nüziders</h1>
                 <h2 class="subtitle is-4">
-                    Dr. Rudolf und Dr. Sylvia Tschabrun, <br />
-                    Mag. Susanne Rath
+                    Dr. Rudolf &amp; Dr. Sylvia Tschabrun
                 </h2>
 
                 <!-- <h3 class="title is-3 klinik"></h3> -->
@@ -32,26 +31,25 @@
                 <div class="level-item has-text-centered">
                     <div class="button" @click="scrollTo()">
                         <p class="heading"></p>
-                        <p class="title is-6">Ordinationszeiten</p>
+                        <p class="title is-6">Öffnungsszeiten</p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="notification">
-                        <p class="heading">Adresse:</p>
+                        <p class="title is-6">6714 Nüziders, Elserweg 8</p>
 
                         <n-link to="/anfahrt" class="button">
-                            <p class="title is-6">6714 Nüziders, Elserweg 8</p>
+                            <p class="heading">Anfahrt</p>
                         </n-link>
                     </div>
                 </div>
             </nav>
 
-            <!-- <div class="box cta">
-                <p class="has-text-centered">
-                    <span class="tag is-primary">New</span>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div v-for="a in announcements" :key="a.id" class="box cta notification is-warning">
+                <p class="has-text-centered" v-html="a">
+                    <!-- <span class="tag is-primary">New</span> -->
                 </p>
-            </div> -->
+            </div>
         </div>
     </section>
 </template>
@@ -66,6 +64,11 @@
             return {
                 menuOpen: false,
             }
+        },
+        computed: {
+            announcements() {
+                return this.$store.state.announcements
+            },
         },
         methods: {
             scrollTo() {
@@ -111,7 +114,8 @@
             }
         }
         .hero-foot {
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
+            margin-bottom: 0;
         }
     }
 </style>
