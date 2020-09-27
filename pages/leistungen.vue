@@ -123,7 +123,7 @@
         },
 
         mounted() {
-            console.log('leistungen-route:', this.$route.params.leistung)
+            // console.log('leistungen-route:', this.$route.params.leistung)
         },
     }
 </script>

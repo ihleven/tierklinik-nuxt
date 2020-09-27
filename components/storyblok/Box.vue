@@ -16,7 +16,7 @@
             },
         },
         mounted() {
-            console.log(' * box:', this.blok)
+            // console.log(' * box:', this.blok)
         },
     }
 </script>

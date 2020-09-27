@@ -71,7 +71,7 @@
             }
         },
         mounted() {
-            console.log('faq:', this.blok)
+            // console.log('faq:', this.blok)
         },
         methods: {
             toggle(index) {

@@ -44,7 +44,7 @@
             return {}
         },
         mounted() {
-            console.log('leistung: ', this.$route.params.leistung)
+            // console.log('leistung: ', this.$route.params.leistung)
         },
     }
 </script>

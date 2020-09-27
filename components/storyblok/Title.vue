@@ -13,7 +13,7 @@
             },
         },
         mounted() {
-            console.log(' * title:', this.blok)
+            // console.log(' * title:', this.blok)
         },
     }
 </script>

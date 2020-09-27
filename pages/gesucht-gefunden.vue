@@ -40,7 +40,7 @@
         },
 
         mounted() {
-            console.log(' * gesucht/gefunden:', this.story)
+            // console.log(' * gesucht/gefunden:', this.story)
         },
     }
 </script>

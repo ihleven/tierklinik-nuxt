@@ -71,7 +71,7 @@
             }
         },
         mounted() {
-            console.log('homepage:', this.story, this.lost)
+            // console.log('homepage:', this.story, this.lost)
         },
         methods: {
             open() {},

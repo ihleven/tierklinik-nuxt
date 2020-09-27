@@ -31,7 +31,7 @@
             },
         },
         mounted() {
-            console.log('Paragraph:', this.blok)
+            // console.log('Paragraph:', this.blok)
         },
     }
 </script>

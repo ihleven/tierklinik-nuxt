@@ -42,7 +42,7 @@
             },
         },
         mounted() {
-            console.log('lostAndFound', this.lostAndFound)
+            // console.log('lostAndFound', this.lostAndFound)
         },
         // methods: {
         //     imageURL() {

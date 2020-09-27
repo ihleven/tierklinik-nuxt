@@ -19,7 +19,7 @@
         name: 'Media',
         props: ['blok'],
         mounted() {
-            console.log('media', this.blok)
+            // console.log('media', this.blok)
         },
     }
 </script>

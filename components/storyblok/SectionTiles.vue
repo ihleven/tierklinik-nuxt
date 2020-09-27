@@ -14,7 +14,7 @@
         name: 'SectionTiles',
         props: ['blok'],
         mounted() {
-            console.log('section-tiles:', this.blok._uid, this.blok.tiles)
+            // console.log('section-tiles:', this.blok._uid, this.blok.tiles)
         },
     }
 </script>

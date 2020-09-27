@@ -44,7 +44,7 @@
         },
 
         mounted() {
-            console.log(' * Datenschutz:', this.story)
+            // console.log(' * Datenschutz:', this.story)
         },
     }
 </script>

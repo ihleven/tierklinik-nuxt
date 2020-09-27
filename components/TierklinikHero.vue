@@ -46,9 +46,9 @@
             </nav>
 
             <div v-for="a in announcements" :key="a.id" class="box cta notification is-warning">
-                <p class="has-text-centered" v-html="a">
+                <div class="has-text-centered" v-html="a">
                     <!-- <span class="tag is-primary">New</span> -->
-                </p>
+                </div>
             </div>
         </div>
     </section>

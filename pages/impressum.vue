@@ -45,7 +45,7 @@
         },
 
         mounted() {
-            console.log(' * Impressum:', this.story)
+            // console.log(' * Impressum:', this.story)
         },
     }
 </script>

@@ -26,7 +26,7 @@
                         </div>
                     </article>
                 </div>
-            
+
                 <div class="tile is-parent">
                     <article class="tile is-child box autobahn">
                         <h4 class="title is-5">Von der Autobahnabfahrt Nüziders:</h4>
@@ -96,12 +96,13 @@
         },
         computed: {
             image() {
-                return '//a.storyblok.com/f/72564/2776x3866/f2902f74d9/charles-k4msj7kc0as-unsplash-hund-mit-jeansjacke.jpg'
+                // return '//a.storyblok.com/f/72564/2776x3866/f2902f74d9/charles-k4msj7kc0as-unsplash-hund-mit-jeansjacke.jpg'
+                return '//a.storyblok.com/1600x600/smart/f/72564/5383x3840/9b9a660a62/stock-hund-mit-telefon-hintergrund-weiss-20343940_l.jpg'
             },
         },
 
         mounted() {
-            console.log(' * Impressum:', this.story)
+            // console.log(' * Impressum:', this.story)
         },
     }
 </script>

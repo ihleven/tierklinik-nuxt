@@ -452,7 +452,7 @@
             }
         },
         mounted() {
-            console.log('homepage:', this.story)
+            // console.log('homepage:', this.story)
         },
         methods: {
             open() {},

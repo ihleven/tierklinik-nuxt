@@ -30,13 +30,10 @@
                                 <!-- +43 5552 66755 -->
                                 <!-- </p> -->
                             </article>
-                            <article class="tile is-child box">
-                                Innerhalb der Öffnungszeiten können Sie Medikamente und Futter ohne Voranmeldung abholen.
-                            </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title is-4">Telefonische Terminvereinbarung</p>
+                                <!-- <p class="title is-4">Telefonische Terminvereinbarung</p> -->
 
                                 <p>Bitte vereinbaren Sie <strong>IMMER</strong> telefonisch einen Termin für Behandlungen und Impfungen.</p>
                                 <p>Auf diese Weise können wir lange Wartezeiten vermeiden und den Abstand im Wartezimmer wahren.</p>
@@ -55,13 +52,13 @@
                                         <th>Nachmittag</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
+                                <!-- <tfoot>
                                     <tr>
                                         <th></th>
                                         <th>Vormittag</th>
                                         <th>Nachmittag</th>
                                     </tr>
-                                </tfoot>
+                                </tfoot> -->
                                 <tbody>
                                     <tr>
                                         <th>Montag</th>
@@ -119,10 +116,11 @@
                             </p>
                         </div>
                     </article>
-                    <div class="tile is-child  notification is-danger">
+                    <!-- <div class="tile is-child  notification is-danger">
                         <p class="title">Achtung Termin</p>
                         Am Samstag, dem 24. Oktober ist unsere Tierklinik nur für Futter- und Medikamentenabholungen geöffnet.
-                    </div>
+                    </div> -->
+                    <article class="tile is-child box">Innerhalb der Öffnungszeiten können Sie <strong>Medikamente und Futter ohne Voranmeldung</strong> abholen.</article>
                 </div>
             </div>
         </div>

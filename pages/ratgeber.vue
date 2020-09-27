@@ -76,7 +76,7 @@
         },
 
         mounted() {
-            console.log('leistungen:', this.$store.state.categoryByUuid)
+            // console.log('leistungen:', this.$store.state.categoryByUuid)
         },
     }
 </script>

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-console.log(process)
+// console.log(process)
 
 let instance = ''
 

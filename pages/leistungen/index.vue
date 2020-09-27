@@ -55,7 +55,7 @@
         },
 
         mounted() {
-            console.log('leistungen index:', this.story)
+            // console.log('leistungen index:', this.story)
         },
     }
 </script>

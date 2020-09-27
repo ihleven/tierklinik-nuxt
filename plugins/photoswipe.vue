@@ -78,7 +78,7 @@
                     tapToClose: true,
                 }
             ) {
-                console.log('open')
+                // console.log('open')
                 const opts = Object.assign(
                     {
                         // index: index,

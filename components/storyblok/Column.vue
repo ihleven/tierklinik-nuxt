@@ -14,7 +14,7 @@
             },
         },
         mounted() {
-            console.log('column:', this.blok)
+            // console.log('column:', this.blok)
         },
     }
 </script>

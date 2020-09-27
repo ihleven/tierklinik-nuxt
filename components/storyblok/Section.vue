@@ -11,7 +11,7 @@
         name: 'Section',
         props: ['blok'],
         mounted() {
-            console.log('section:', this.blok._uid, this.blok.body)
+            // console.log('section:', this.blok._uid, this.blok.body)
         },
     }
 </script>

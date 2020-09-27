@@ -9,6 +9,7 @@
                 <n-link
                     v-for="story in stories"
                     :key="story._uid"
+                    v-editable="story"
                     class="panel-block is-size-6"
                     :to="'/ratgeber/' + category.slug + '/' + story.slug"
                     :class="{ 'is-active': story.uuid == article.uuid }"

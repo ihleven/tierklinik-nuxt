@@ -20,11 +20,11 @@
             <b>+43 5552 66755</b> &nbsp; &nbsp;Praxis &amp; Notdienst
         </span>
         <ul>
-            <li><n-link to="/sprechstunden">sprechstunden</n-link></li>
-            <li><n-link to="/anfahrt">anfahrt</n-link></li>
-            <li><n-link to="/kontakt">kontakt</n-link></li>
-            <li><n-link to="/impressum">impressum</n-link></li>
-            <li><n-link to="/datenschutz">datenschutz</n-link></li>
+            <!-- <li><n-link to="/sprechstunden">sprechstunden</n-link></li> -->
+            <!-- <li><n-link to="/anfahrt">anfahrt</n-link></li>
+            <li><n-link to="/kontakt">kontakt</n-link></li> -->
+            <!-- <li><n-link to="/impressum">impressum</n-link></li> -->
+            <!-- <li><n-link to="/datenschutz">datenschutz</n-link></li> -->
         </ul>
     </nav>
 </template>

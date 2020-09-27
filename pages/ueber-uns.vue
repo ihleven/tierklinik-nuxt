@@ -53,15 +53,15 @@
         },
 
         mounted() {
-            this.story.content.sections.forEach(element => {
-                console.log('element:', element)
-            })
-            console.log('mounted:', this.submenu)
+            // this.story.content.sections.forEach(element => {
+            //     console.log('element:', element)
+            // })
+            // console.log('mounted:', this.submenu)
         },
         methods: {
             scrollTo(anchor) {
                 let element = document.getElementById(`${anchor}`)
-                console.log(anchor, element)
+                // console.log(anchor, element)
 
                 element.scrollIntoView({ block: 'start', behavior: 'smooth' })
             },

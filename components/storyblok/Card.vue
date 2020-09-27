@@ -30,7 +30,7 @@
             },
             imageURL() {
                 let imageService = '//img2.storyblok.com/',
-                    option = '200x150',
+                    option = '440x330',
                     path = this.blok.image.replace('//a.storyblok.com', '')
                 return imageService + option + path
             },
