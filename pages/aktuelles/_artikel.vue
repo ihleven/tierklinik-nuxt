@@ -4,16 +4,29 @@
         <PageHero :image="story.content.image" :heading="story.content.title" :subheading="story.content.subtitle"></PageHero>
         <Breadcrumbs />
 
-        {{ author }}
-
         <section class="section">
             <div class="container">
-                <div v-editable="story.content" class="">
-                    <h1>{{ story.content.name }}</h1>
-                    <div class="content" v-html="body"></div>
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-96x96">
+                            <img :src="author.avatar | transformImage('96x96/smart')" :alt="author.name" class="is-rounded" />
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-3">{{ story.content.title }}</p>
+                        <div class="subtitle is-5">
+                            von {{ author.name }} am <time datetime="2016-1-1">{{ story.created_at | formatDate }}</time>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div v-editable="story.content" class="content">
+                    <blockquote>{{ story.content.teaser }}</blockquote>
+                    <div v-html="body"></div>
                 </div>
             </div>
         </section>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -22,9 +35,12 @@
     // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
     import Breadcrumbs from '@/components/Breadcrumbs'
-
+    import Footer from '@/components/Footer'
     export default {
-        components: { PageHero, Breadcrumbs },
+        components: { PageHero, Breadcrumbs, Footer },
+        filters: {
+            formatDate: date => Intl.DateTimeFormat('de-AT').format(new Date(date)),
+        },
         mixins: [storyblokLivePreview],
         asyncData(context) {
             return context.app.$storyapi

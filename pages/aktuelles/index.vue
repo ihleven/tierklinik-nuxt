@@ -30,20 +30,23 @@
                             <div class="content">
                                 {{ post.content.teaser }}
                             </div>
-                            <nuxt-link :to="'/artikel/' + post.slug">Lesen</nuxt-link>
+                            <nuxt-link v-if="post.content.content" :to="'/aktuelles/' + post.slug">Lesen</nuxt-link>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <Footer></Footer>
     </main>
 </template>
 
 <script>
     // import Navigation from '@/components/Navigation.vue'
     import PageHero from '@/components/PageHero'
+    import Footer from '@/components/Footer'
     export default {
-        components: { PageHero },
+        components: { PageHero, Footer },
         filters: {
             formatDate: date => Intl.DateTimeFormat('de-AT').format(new Date(date)),
         },
