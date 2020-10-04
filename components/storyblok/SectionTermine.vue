@@ -116,11 +116,14 @@
                             </p>
                         </div>
                     </article>
-                    <!-- <div class="tile is-child  notification is-danger">
-                        <p class="title">Achtung Termin</p>
-                        Am Samstag, dem 24. Oktober ist unsere Tierklinik nur für Futter- und Medikamentenabholungen geöffnet.
-                    </div> -->
+
                     <article class="tile is-child box">Innerhalb der Öffnungszeiten können Sie <strong>Medikamente und Futter ohne Voranmeldung</strong> abholen.</article>
+                </div>
+            </div>
+
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical is-parent">
+                    <div v-for="a in announcements" :key="a.id" class="tile is-child box notification is-warning has-text-centered" v-html="a"></div>
                 </div>
             </div>
         </div>
@@ -131,6 +134,12 @@
     export default {
         name: 'SectionTermine',
         props: ['blok'],
+        computed: {
+            announcements() {
+                console.log('authors:', this.$store.state.authors)
+                return this.$store.state.announcements
+            },
+        },
     }
 </script>
 

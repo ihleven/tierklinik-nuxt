@@ -1,103 +1,43 @@
 <template>
     <div>
-        <footer class="footer">
+        <footer class="footer has-background-grey-dark">
             <div class="container">
                 <div class="columns is-multiline">
-                    <div class="column is-one-third">
-                        <article class="notification">
-                            <p class="title is-3">Kontakt</p>
-                            <p class="title is-5">Tierklinik Tschabrun</p>
+                    <div class="column is-half">
+                        <article class="notification has-background-grey-dark has-text-light">
+                            <p class="title is-3">Tierklinik Tschabrun</p>
+                            <p class="title is-5"></p>
                             <p>Elserweg 8a<br />6714 Nüziders</p>
                             <p>tel: +43 213141234 123</p>
                             <p>fax: +43 213141234 123</p>
                             <p>mail: mail@tierklinik-tschabrun.com</p>
                         </article>
                     </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-info">
-                                    <i class="fab fa-lg fa-wpforms"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Form</h1>
-                                    <p class="is-size-5 subtitle">The indispensable <strong>form controls</strong>, designed for maximum clarity</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-danger">
-                                    <i class="fas fa-lg fa-cubes"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Components</h1>
-                                    <p class="is-size-5 subtitle">
-                                        Impressum
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-grey">
-                                    <i class="fas fa-lg fa-cogs"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Modifiers</h1>
-                                    <p class="is-size-5 subtitle">An <strong>easy-to-read</strong> naming system designed for humans</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-lg fa-warehouse"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Layout</h1>
-                                    <p class="is-size-5 subtitle">Design the <strong>structure</strong> of your webpage with these CSS classes</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-danger">
-                                    <i class="fas fa-lg fa-cube"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Elements</h1>
-                                    <p class="is-size-5 subtitle">Essential interface elements that only require a <strong>single CSS class</strong></p>
-                                </div>
-                            </div>
+                    <div class="column is-half">
+                        <article class="notification  has-background-grey-dark has-text-light">
+                            <h4 class="title is-size-4">Sitemap</h4>
+                            <ul style="list-style:none">
+                                <li class="is-size-5"><a href="/">Startseite</a></li>
+                                <li class="is-size-5"><a href="/ueber-uns">Über uns</a></li>
+                                <li class="is-size-5"><a href="/leistungen">Unsere Leistungen</a></li>
+                                <li class="is-size-5"><a href="/ratgeber">Ratgeber</a></li>
+                                <li class="is-size-5"><a href="/aktuelles">Aktuelles</a></li>
+                                <li class="is-size-5"><a href="/blog">Blog</a></li>
+
+                                <li class="is-size-5"><a href="/impressum">Impressum</a></li>
+                                <li class="is-size-5"><a href="/datenschutz">Datenschutz</a></li>
+                                <li class="is-size-5"><a href="/kontakt">Kontakt</a></li>
+                            </ul>
                         </article>
                     </div>
                 </div>
             </div>
         </footer>
-        <footer class="footer has-background-black-ter has-text-white">
-            <!-- https://www.orbitmedia.com/blog/website-footer-design-best-practices/ 
+        <!-- https://www.orbitmedia.com/blog/website-footer-design-best-practices/ 
         
         Footer-Beispiel: https://www.ithelps-digital.com/de/impressum
         -->
+        <!-- <footer class="footer has-background-black-ter has-text-white">
 
             <div class="container">
                 <div class="columns">
@@ -180,7 +120,7 @@
                 <hr />
                 c 2020 Copyright
             </div>
-        </footer>
+        </footer> -->
     </div>
 </template>
 

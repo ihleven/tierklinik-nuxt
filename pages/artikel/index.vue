@@ -15,19 +15,20 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                                    <figure class="image is-1-by-1">
+                                        <img :src="post.author.avatar | transformImage('72x72/smart')" :alt="post.author.name" class="is-rounded" />
                                     </figure>
                                 </div>
                                 <div class="media-content">
                                     <p class="title is-4">{{ post.content.title }}</p>
-                                    <p class="subtitle is-6">{{ post.content.author }}</p>
+                                    <div class="subtitle is-6">
+                                        von {{ post.author.name }} am <time datetime="2016-1-1">{{ post.created_at | formatDate }}</time>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="content">
-                                {{ post.content.teaser }} <br />
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                {{ post.content.teaser }}
                             </div>
                             <nuxt-link :to="'/artikel/' + post.slug">Lesen</nuxt-link>
                         </div>
@@ -43,6 +44,9 @@
     import PageHero from '@/components/PageHero'
     export default {
         components: { PageHero },
+        filters: {
+            formatDate: date => Intl.DateTimeFormat('de-AT').format(new Date(date)),
+        },
         async asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
             let index = await context.app.$storyapi.get('cdn/stories/posts/index', {
@@ -61,17 +65,27 @@
             // .catch(res => {
             //     context.error({ statusCode: res.response.status, message: res.response.data })
             // })
+            let articles = stories.data.stories.filter(s => s.content.component == 'post')
+            articles.forEach(a => {
+                a.author = context.store.state.authors[a.content.author] || {}
+            })
 
             return {
                 story: index.data.story,
-                articles: stories.data.stories.filter(s => s.content.component == 'post'),
+                articles: articles,
             }
         },
         data() {
             return { total: 0, data: { stories: [] } }
         },
+        computed: {
+            authors() {
+                console.log('authors:', this.$store.state.authors)
+                return this.$store.state.authors
+            },
+        },
         mounted() {
-            // console.log(this.story, this.articles)
+            console.log('authors:', this.authors['765c7cee-399c-4514-9d2b-8ed4c861019b'].name)
         },
     }
 </script>
@@ -80,6 +94,10 @@
     .wrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-gap: 10px;
+        grid-gap: 1.5rem;
+    }
+    .card {
+        height: 100%;
+        margin-bottom: 0;
     }
 </style>

@@ -47,7 +47,7 @@ export const mutations = {
 export const actions = {
     async nuxtServerInit({ dispatch }, { req }) {
         // console.log('nuxtServerINIT loading..................', req)
-        // await dispatch('loadAuthors')
+        await dispatch('loadAuthors')
         await dispatch('loadCategories')
         await dispatch('loadLostAndFound')
         await dispatch('loadAnnouncments')
