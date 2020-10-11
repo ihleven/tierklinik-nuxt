@@ -83,12 +83,12 @@
         },
         computed: {
             authors() {
-                console.log('authors:', this.$store.state.authors)
+                // console.log('authors:', this.$store.state.authors)
                 return this.$store.state.authors
             },
         },
         mounted() {
-            console.log('authors:', this.authors['765c7cee-399c-4514-9d2b-8ed4c861019b'].name)
+            // console.log('authors:', this.authors['765c7cee-399c-4514-9d2b-8ed4c861019b'].name)
         },
     }
 </script>

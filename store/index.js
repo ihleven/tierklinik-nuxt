@@ -101,6 +101,7 @@ export const actions = {
                 // version: context.version,
                 cv: state.cacheVersion,
                 starts_with: 'lostandfound',
+                sort_by: 'position',
             })
             .then(res => {
                 commit('setLostAndFound', res.data.stories)

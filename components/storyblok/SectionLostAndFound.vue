@@ -16,14 +16,14 @@
                             </figure>
                         </div>
 
-                        <div class="card-content content">
+                        <div class="card-content">
                             <h5 class="title is-4">{{ lf.content.headline }}</h5>
+                            <h6 class="subtitle is-5">vom {{ lf.content.lost | formatDate }}</h6>
                             <div v-html="lf.content.content ? $storyapi.richTextResolver.render(lf.content.content) : ''"></div>
-
-                            <p>
-                                <a href="#">Learn more</a>
-                            </p>
-                            <time datetime="2016-1-1">{{ lf.content.lost }}</time>
+                        </div>
+                        <div v-if="lf.content.found && lf.content.message" class="notification is-success">
+                            <div class="date">Update vom {{ lf.content.found | formatDate }}</div>
+                            {{ lf.content.message }}
                         </div>
                     </article>
                 </div>
@@ -35,23 +35,15 @@
 <script>
     export default {
         name: 'SectionLostAndFound',
+        filters: {
+            formatDate: date => Intl.DateTimeFormat('de-AT').format(new Date(date)),
+        },
         props: ['blok'],
         computed: {
             lostAndFound() {
-                return this.$store.state.lostAndFound
+                return this.$store.state.lostAndFound.slice(0, 3)
             },
         },
-        mounted() {
-            // console.log('lostAndFound', this.lostAndFound)
-        },
-        // methods: {
-        //     imageURL() {
-        //         let imageService = '//img2.storyblok.com/',
-        //             option = '200x150',
-        //             path = this.blok.image.replace('//a.storyblok.com', '')
-        //         return imageService + option + path
-        //     },
-        // }
     }
 </script>
 
@@ -59,5 +51,21 @@
     .intro {
         padding: 3rem 15%;
         text-align: center;
+    }
+    .card {
+        .title {
+            margin-bottom: 0;
+        }
+        .subtitle {
+            padding: 1.5rem 0;
+            margin-bottom: 0;
+        }
+        .notification {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            .date {
+                margin-bottom: 0.5rem;
+            }
+        }
     }
 </style>

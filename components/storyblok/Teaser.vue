@@ -2,7 +2,7 @@
     <div v-editable="blok" class="teaser">
         <component :is="slide.component" v-if="slide" :blok="slide"></component>
         <div class="teaser__pag">
-            <button :key="index" v-for="(blok, index) in blok.body" @click="handleDotClick(index)" :class="{ 'teaser__pag-dot--current': index == currentSlide }" class="teaser__pag-dot">Next</button>
+            <button v-for="(blok, index) in blok.body" :key="index" :class="{ 'teaser__pag-dot--current': index == currentSlide }" class="teaser__pag-dot" @click="handleDotClick(index)">Next</button>
         </div>
     </div>
 </template>
@@ -37,7 +37,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .teaser__pag {
         width: 100%;
         text-align: center;

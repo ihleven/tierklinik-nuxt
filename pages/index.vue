@@ -42,46 +42,46 @@
                 version: version,
                 cv: context.store.state.cacheVersion,
             })
-            let lostFound = await context.app.$storyapi.get('cdn/stories', {
-                version: version,
-                starts_with: 'lostandfound',
-                cv: context.store.state.cacheVersion,
-            })
+            // let lostFound = await context.app.$storyapi.get('cdn/stories', {
+            //     version: version,
+            //     starts_with: 'lostandfound',
+            //     cv: context.store.state.cacheVersion,
+            // })
 
             return {
                 story: index.data.story,
-                lost: lostFound.data.stories,
+                // lost: lostFound.data.stories,
             }
         },
         data() {
             return {
-                project: 'default',
-                items: [
-                    {
-                        src: 'https://i.picsum.photos/id/395/640/480.jpg',
-                        w: 1024,
-                        h: 768,
-                    },
-                    {
-                        src: 'https://i.picsum.photos/id/237/640/480.jpg',
-                        w: 1024,
-                        h: 768,
-                    },
-                ],
+                // project: 'default',
+                // items: [
+                //     {
+                //         src: 'https://i.picsum.photos/id/395/640/480.jpg',
+                //         w: 1024,
+                //         h: 768,
+                //     },
+                //     {
+                //         src: 'https://i.picsum.photos/id/237/640/480.jpg',
+                //         w: 1024,
+                //         h: 768,
+                //     },
+                // ],
             }
         },
         mounted() {
             // console.log('homepage:', this.story, this.lost)
         },
         methods: {
-            open() {},
+            // open() {},
         },
     }
 </script>
 
 <style lang="scss" scoped>
-    .panel-block {
-        background-color: white;
-        padding: 0.75rem 1rem;
-    }
+    // .panel-block {
+    //     background-color: white;
+    //     padding: 0.75rem 1rem;
+    // }
 </style>

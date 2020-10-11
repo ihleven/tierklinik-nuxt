@@ -24,7 +24,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .card-image > .fa {
         font-size: 8rem;
         padding-top: 2rem;

@@ -12,40 +12,43 @@
                                     Fachgebiete
                                 </p>
                                 <ul class="menu-list">
-                                    <li><n-link to="/leistungen/interne-medizin">Intere</n-link></li>
+                                    <li><n-link to="/leistungen/interne-medizin">Interne</n-link></li>
                                     <li><n-link to="/leistungen/kardiologie">Kardiologie</n-link></li>
                                     <li><n-link to="/leistungen/orthopaedie">Orthopädie</n-link></li>
                                     <li><n-link to="/leistungen/dermatologie">Dermatologie</n-link></li>
                                     <li><n-link to="/leistungen/zahnbehandlungen">Zahnbehandlungen</n-link></li>
-                                    <li><n-link to="/leistungen/onkologie">Onkologie</n-link></li>
+                                    <li><n-link to="/leistungen/onkologie">Krebsbehandlung</n-link></li>
                                     <li><n-link to="/leistungen/gynaekologie">Gynäkologie</n-link></li>
                                 </ul>
-                                <p class="menu-label">Therapien</p>
+                                <!-- <p class="menu-label">Therapien</p> -->
                                 <ul class="menu-list">
                                     <li>
-                                        <n-link to="/leistungen/operationen">Operationen</n-link>
-                                        <ul>
+                                        <n-link to="/leistungen/operationen">Chirurgie</n-link>
+                                        <!-- <ul>
                                             <li><n-link to="/leistungen/weichteilchirurgie">Weichteilchirurgie</n-link></li>
                                             <li><n-link to="/leistungen/gelenks-chirurgie">Gelenks-Chirurgie</n-link></li>
                                             <li><n-link to="/leistungen/knochenchirurgie">Knochenchirurgie</n-link></li>
                                             <li><n-link to="/leistungen/tumorentfernungen">Tumorentfernungen</n-link></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
-                                    <li><n-link to="/leistungen/medikamente">Medikamente</n-link></li>
+                                    <!-- <li><n-link to="/leistungen/medikamente">Medikamente</n-link></li> -->
                                     <li><n-link to="/leistungen/akkupunktur">Akkupunktur</n-link></li>
                                     <li><n-link to="/leistungen/lasertherapie">Lasertherapie</n-link></li>
                                 </ul>
-                                <p class="menu-label">
-                                    Diagnostikmöglichkeiten
-                                </p>
                                 <ul class="menu-list">
+                                    <li><n-link to="/leistungen/lasertherapie">Diagnostik</n-link></li>
+                                </ul>
+                                <!-- <p class="menu-label">
+                                    Diagnostikmöglichkeiten
+                                </p> -->
+                                <!-- <ul class="menu-list">
                                     <li><n-link to="/leistungen/digitales-roentgen">Digitales Röntgen</n-link></li>
                                     <li><n-link to="/leistungen/blutanalyse">Blutanalysegerät für Blutchemie </n-link></li>
                                     <li><n-link to="/leistungen/ultraschall">Ultraschall</n-link></li>
                                     <li><n-link to="/leistungen/mikroskop">Mikroskop</n-link></li>
-                                </ul>
+                                </ul> -->
 
-                                <p class="menu-label">
+                                <!-- <p class="menu-label">
                                     Patienten
                                 </p>
                                 <ul class="menu-list">
@@ -55,7 +58,7 @@
                                     <li><n-link to="/leistungen/kaninchen">Kaninchen</n-link></li>
                                     <li><n-link to="/leistungen/meerschweinchen">Meerschweinchen</n-link></li>
                                     <li><n-link to="/leistungen/hamster">Hamster</n-link></li>
-                                </ul>
+                                </ul> -->
                             </aside>
                         </div>
                     </div>

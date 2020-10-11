@@ -4,9 +4,13 @@
             <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/artikel">Artikel</a></li>
+                    <li>
+                        <a :href="pagehref">{{ page }}</a>
+                    </li>
 
-                    <li class="is-active"><a href aria-current="page">Über uns</a></li>
+                    <li v-if="self" class="is-active">
+                        <a href aria-current="page">{{ self }}</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -15,7 +19,11 @@
 
 <script>
     export default {
-        props: ['img', 'heading', 'subheading'],
+        props: {
+            page: { type: String, required: true },
+            pagehref: { type: String, required: true },
+            self: { type: String, required: true },
+        },
     }
 </script>
 

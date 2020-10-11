@@ -84,7 +84,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .panel-block {
         .state-icon {
             margin-right: 1rem;

@@ -59,6 +59,7 @@
         background-color: rgba(10, 10, 10, 0.7);
         text-shadow: 1px 1px 0 #043e42, 0 0 0.5rem rgba(10, 10, 10, 0.5);
         padding: 0 1rem;
+        word-break: normal;
     }
     .hero-body .subtitle {
         color: hsl(192, 17%, 99%) !important;

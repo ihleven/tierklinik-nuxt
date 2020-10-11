@@ -2,7 +2,7 @@
     <div>
         <!-- <Navigation /> -->
         <PageHero :image="story.content.image" :heading="story.content.title" :subheading="story.content.subtitle"></PageHero>
-        <Breadcrumbs />
+        <Breadcrumbs page="Aktuelles" pagehref="/aktuelles" :self="story.content.title" />
 
         <section class="section">
             <div class="container">

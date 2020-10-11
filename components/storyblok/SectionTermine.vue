@@ -136,7 +136,7 @@
         props: ['blok'],
         computed: {
             announcements() {
-                console.log('authors:', this.$store.state.authors)
+                // console.log('authors:', this.$store.state.authors)
                 return this.$store.state.announcements
             },
         },

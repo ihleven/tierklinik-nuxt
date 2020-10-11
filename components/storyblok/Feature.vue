@@ -22,7 +22,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .feature {
         text-align: center;
         padding: 30px 10px 100px;
