@@ -37,7 +37,7 @@
                                     <li><n-link to="/leistungen/lasertherapie">Lasertherapie</n-link></li>
                                 </ul>
                                 <ul class="menu-list">
-                                    <li><n-link to="/leistungen/lasertherapie">Diagnostik</n-link></li>
+                                    <li><n-link to="/leistungen/diagnostik">Diagnostik</n-link></li>
                                 </ul>
                                 <!-- <p class="menu-label">
                                     Diagnostikmöglichkeiten
