@@ -15,6 +15,7 @@
                                     <li><n-link to="/leistungen/interne-medizin">Interne</n-link></li>
                                     <li><n-link to="/leistungen/kardiologie">Kardiologie</n-link></li>
                                     <li><n-link to="/leistungen/orthopaedie">Orthopädie</n-link></li>
+                                    <li><n-link to="/leistungen/ganganalyse">Ganganalyse</n-link></li>
                                     <li><n-link to="/leistungen/dermatologie">Dermatologie</n-link></li>
                                     <li><n-link to="/leistungen/zahnbehandlungen">Zahnbehandlungen</n-link></li>
                                     <li><n-link to="/leistungen/onkologie">Krebsbehandlung</n-link></li>
