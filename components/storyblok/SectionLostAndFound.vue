@@ -8,7 +8,7 @@
         </div>
         <div class="container">
             <div class="columns">
-                <div v-for="lf in lostAndFound" :key="lf.content._uid" class="column is-4">
+                <div v-for="lf in lost" :key="lf.content._uid" class="column is-4">
                     <article class="card is-shady">
                         <div v-if="lf.content.image" class="card-image">
                             <figure class="image is-4by3">
@@ -29,6 +29,29 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="columns">
+                <div v-for="f in found" :key="f.content._uid" class="column is-4">
+                    <article class="card is-shady">
+                        <div v-if="f.content.image" class="card-image">
+                            <figure class="image is-4by3">
+                                <img :src="f.content.image | transformImage('200x150')" :alt="f.content.headline" @click="pswp()" />
+                            </figure>
+                        </div>
+
+                        <div class="card-content">
+                            <h5 class="title is-4">{{ f.content.headline }}</h5>
+                            <h6 class="subtitle is-5">vom {{ f.content.lost | formatDate }}</h6>
+                            <div v-html="f.content.content ? $storyapi.richTextResolver.render(f.content.content) : ''"></div>
+                        </div>
+                        <div class="notification is-success">
+                            <div class="date">Update vom {{ f.content.found | formatDate }}</div>
+                            {{ f.content.message }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -42,6 +65,12 @@
         computed: {
             lostAndFound() {
                 return this.$store.state.lostAndFound.slice(0, 3)
+            },
+            lost() {
+                return this.$store.state.lostAndFound.filter(i => !i.content.found || !i.content.message)
+            },
+            found() {
+                return this.$store.state.lostAndFound.filter(i => i.content.found && i.content.message)
             },
         },
     }
