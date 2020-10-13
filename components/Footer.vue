@@ -24,9 +24,9 @@
                                 <li class="is-size-5"><a href="/aktuelles">Aktuelles</a></li>
                                 <li class="is-size-5"><a href="/blog">Blog</a></li>
 
-                                <li class="is-size-5"><a href="/impressum">Impressum</a></li>
+                                <!-- <li class="is-size-5"><a href="/impressum">Impressum</a></li>
                                 <li class="is-size-5"><a href="/datenschutz">Datenschutz</a></li>
-                                <li class="is-size-5"><a href="/kontakt">Kontakt</a></li>
+                                <li class="is-size-5"><a href="/kontakt">Kontakt</a></li> -->
                             </ul>
                         </article>
                     </div>

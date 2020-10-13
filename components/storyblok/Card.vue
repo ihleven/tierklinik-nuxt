@@ -82,7 +82,7 @@
         box-shadow: rgba(0, 0, 0, 0.1) 0 1px 0;
         border-radius: 4px;
         display: inline-block;
-        margin: 10px;
+        // margin: 10px;
         position: relative;
         transition: all 0.2s ease-in-out;
     }

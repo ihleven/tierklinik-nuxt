@@ -7,12 +7,12 @@
             </p>
         </div>
         <div class="container">
-            <div class="columns">
+            <div class="columns is-multiline">
                 <div v-for="lf in lost" :key="lf.content._uid" class="column is-4">
                     <article class="card is-shady">
                         <div v-if="lf.content.image" class="card-image">
                             <figure class="image is-4by3">
-                                <img :src="lf.content.image | transformImage('200x150')" :alt="lf.content.headline" @click="pswp()" />
+                                <img :src="lf.content.image | transformImage('400x300')" :alt="lf.content.headline" @click="pswp()" />
                             </figure>
                         </div>
 
@@ -27,15 +27,12 @@
                         </div>
                     </article>
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="columns">
+
                 <div v-for="f in found" :key="f.content._uid" class="column is-4">
                     <article class="card is-shady">
                         <div v-if="f.content.image" class="card-image">
                             <figure class="image is-4by3">
-                                <img :src="f.content.image | transformImage('200x150')" :alt="f.content.headline" @click="pswp()" />
+                                <img :src="f.content.image | transformImage('400x300')" :alt="f.content.headline" @click="pswp()" />
                             </figure>
                         </div>
 
@@ -63,14 +60,17 @@
         },
         props: ['blok'],
         computed: {
-            lostAndFound() {
-                return this.$store.state.lostAndFound.slice(0, 3)
-            },
             lost() {
-                return this.$store.state.lostAndFound.filter(i => !i.content.found || !i.content.message)
+                return this.$store.state.lostAndFound
+                    .filter(i => !i.content.found || !i.content.message)
+                    .sort((a, b) => (a.content.lost > b.content.lost ? -1 : 1))
+                    .slice(0, 3)
             },
             found() {
-                return this.$store.state.lostAndFound.filter(i => i.content.found && i.content.message)
+                return this.$store.state.lostAndFound
+                    .filter(i => i.content.found && i.content.message)
+                    .sort((a, b) => (a.content.found > b.content.found ? -1 : 1))
+                    .slice(0, 3)
             },
         },
     }
@@ -95,6 +95,14 @@
             .date {
                 margin-bottom: 0.5rem;
             }
+            margin-top: auto;
         }
+    }
+    .card {
+        height: 100%;
+        margin-bottom: 0;
+        display: flex;
+        flex-flow: column;
+        // justify-content: space-between;
     }
 </style>
