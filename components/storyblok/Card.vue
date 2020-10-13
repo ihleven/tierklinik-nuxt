@@ -37,11 +37,30 @@
         },
         methods: {
             pswp() {
+                // console.log(this.blok.image)
+                // console.log(this.blok.image.split('/')[4], 4) // space id
+                // console.log(this.blok.image.split('/')[5], 5) // dimension string
+                // console.log(this.blok.image.split('/')[5].split('x')) // width and height as array
+
+                let dimensions = {
+                    width: this.blok.image.split('/')[5].split('x')[0],
+                    height: this.blok.image.split('/')[5].split('x')[1],
+                }
+                let format = dimensions.width / dimensions.height
+                let maxdim = dimensions.width > dimensions.height ? dimensions.width : dimensions.height
+                let maxscreen = window.innerWidth > window.innerHeight ? window.innerWidth : window.innerHeight
+                let width = dimensions.width
+                let height = dimensions.height
+                if (maxdim > maxscreen) {
+                    width = parseInt((width * maxscreen) / maxdim)
+                    height = parseInt((height * maxscreen) / maxdim)
+                }
+
                 let items = [
                     {
-                        src: this.blok.image,
-                        w: 1024,
-                        h: 768,
+                        src: this.$options.filters.transformImage(this.blok.image, `${width}x${height}`),
+                        w: width,
+                        h: height,
                     },
                 ]
                 this.$photoswipe.open(0, items)
