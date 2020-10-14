@@ -45,7 +45,7 @@
                     </div>
                     {{ post.content.teaser }}
 
-                    <nuxt-link :to="post.full_slug">_Lesen_</nuxt-link>
+                    <nuxt-link :to="post.full_slug" class="detaillink">_Lesen_</nuxt-link>
 
                     <!-- <a :href="post.full_slug" class="postlink">_Beitrag lesen_</a> -->
                 </div>
@@ -69,32 +69,13 @@
 
 <script>
     import PageHero from '@/components/PageHero'
-    import TopBar from '@/components/TopBar'
-    import Navigation from '@/components/Navigation.vue'
-    import SectionIntro from '@/components/storyblok/SectionIntro.vue'
+
     export default {
         layout: 'start',
-        components: { PageHero, TopBar, Navigation, SectionIntro },
+        components: { PageHero },
         filters: {
             formatDate: date => Intl.DateTimeFormat('de-AT').format(new Date(date)),
         },
-        // asyncData(context) {
-        //     let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-
-        //     return context.app.$storyapi
-        //         .get('cdn/stories', {
-        //             version: version,
-        //             starts_with: `blog`,
-        //             is_startpage: false,
-        //             cv: context.store.state.cacheVersion,
-        //         })
-        //         .then(res => {
-        //             return res
-        //         })
-        //         .catch(res => {
-        //             context.error({ statusCode: res.response.status, message: res.response.data })
-        //         })
-        // },
         async asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
             let index = await context.app.$storyapi.get('cdn/stories/blog', {
@@ -165,8 +146,8 @@
     }
 
     footer {
-        background: #321313;
         grid-area: footer;
+        background: #321313;
         color: var(--primary);
     }
 
@@ -198,9 +179,11 @@
         text-align: left;
         word-break: break-word;
     }
-    .red {
-        padding: 2rem;
+    .detaillink {
+        display: block;
+        margin-top: 1rem;
     }
+
     article {
         border-top: none !important;
         margin: 3rem;
@@ -227,25 +210,6 @@
             display: block;
             padding: 0.5rem 0;
         }
-    }
-    .blue {
-        background-color: blue;
-    }
-    .yellow {
-        background-color: yellow;
-    }
-    .blog__overview {
-        padding: 0 20px;
-        max-width: 600px;
-        margin: 40px auto 60px;
-
-        p {
-            line-height: 1.6;
-        }
-    }
-
-    .blog__detail-link {
-        color: #000;
     }
 
     .topbar {

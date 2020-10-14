@@ -1,4 +1,5 @@
 export default {
+    // srcDir: 'src/',
     head: {
         link: [
             {
@@ -9,22 +10,21 @@ export default {
         ],
     },
     modules: [
-        //'@nuxtjs/axios',
         //'@nuxtjs/proxy',
         '@nuxtjs/pwa',
         ['storyblok-nuxt', { accessToken: 'srr3G6rQFYrg7JXUzHfFNwtt', cacheProvider: 'memory' }],
         // With options
-        [
-            'nuxt-leaflet',
-            {
-                /* module options */
-            },
-        ],
+        // [
+        //     'nuxt-leaflet',
+        //     {
+        //         /* module options */
+        //     },
+        // ],
     ],
     css: [
         // Load a Node.js module directly (here it's a Sass file)
         //'bulma',
-        'typeface-clear-sans',
+        // 'typeface-clear-sans',
         '~/assets/styles/main.scss',
     ],
     // proxy: {

@@ -60,16 +60,22 @@
 
     export default {
         components: { TopBar, Navigation },
+        async fetch() {
+            const story = await this.$storyapi.get(`cdn/stories`, { starts_with: 'ankuendigungen' })
+
+            this.announcements = story.data.stories.map(story => this.$storyapi.richTextResolver.render(story.content.text))
+        },
+        fetchOnServer: false,
         data() {
             return {
-                menuOpen: false,
+                announcements: [],
             }
         },
-        computed: {
-            announcements() {
-                return this.$store.state.announcements
-            },
-        },
+        // computed: {
+        //     announcements() {
+        //         return this.$store.state.announcements
+        //     },
+        // },
         methods: {
             scrollTo() {
                 let element = document.getElementById(`besuch`)

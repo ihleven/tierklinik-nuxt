@@ -36,7 +36,7 @@
             },
         },
         mounted() {
-            console.log(this.blok)
+            // console.log(this.blok)
         },
         methods: {
             pswp() {
