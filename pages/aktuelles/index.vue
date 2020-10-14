@@ -14,7 +14,7 @@
                         </div>
                         <div class="card-content">
                             <div class="media">
-                                <div class="media-left">
+                                <div v-if="post.author" class="media-left">
                                     <figure class="image is-1-by-1">
                                         <img :src="post.author.avatar | transformImage('72x72/smart')" :alt="post.author.name" class="is-rounded" />
                                     </figure>
@@ -22,7 +22,7 @@
                                 <div class="media-content">
                                     <p class="title is-4">{{ post.content.title }}</p>
                                     <div class="subtitle is-6">
-                                        von {{ post.author.name }} am <time datetime="2016-1-1">{{ post.created_at | formatDate }}</time>
+                                        <span v-if="post.author && post.author.name">von {{ post.author.name }}</span> am <time>{{ post.created_at | formatDate }}</time>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                             <div class="content">
                                 {{ post.content.teaser }}
                             </div>
-                            <nuxt-link v-if="post.content.content" :to="'/aktuelles/' + post.slug">Lesen</nuxt-link>
+                            <nuxt-link v-if="isempty(post.content.content)" :to="'/aktuelles/' + post.slug">Lesen</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -52,22 +52,18 @@
         },
         async asyncData(context) {
             let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+
             let index = await context.app.$storyapi.get('cdn/stories/posts/index', {
-                version: version,
+                version: context.query._storyblok || context.isDev ? 'draft' : 'published',
                 cv: context.store.state.cacheVersion,
             })
+
             let stories = await context.app.$storyapi.get('cdn/stories', {
                 version: version,
                 starts_with: 'posts',
                 cv: context.store.state.cacheVersion,
             })
-            // .then(res => {
-            //     console.log(res.data)
-            //     return res
-            // })
-            // .catch(res => {
-            //     context.error({ statusCode: res.response.status, message: res.response.data })
-            // })
+
             let articles = stories.data.stories.filter(s => s.content.component == 'post')
             articles.forEach(a => {
                 a.author = context.store.state.authors[a.content.author] || {}
@@ -89,6 +85,15 @@
         },
         mounted() {
             // console.log('authors:', this.authors['765c7cee-399c-4514-9d2b-8ed4c861019b'].name)
+        },
+        methods: {
+            isempty(content) {
+                if (content) {
+                    return this.$storyapi.richTextResolver.render(content).replace(/<[^>]*>?/gm, '').length
+                }
+                return ''
+                //
+            },
         },
     }
 </script>

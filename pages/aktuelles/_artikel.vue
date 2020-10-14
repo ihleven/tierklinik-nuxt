@@ -8,14 +8,14 @@
             <div class="container">
                 <div class="media">
                     <div class="media-left">
-                        <figure class="image is-96x96">
+                        <figure v-if="author" class="image is-96x96">
                             <img :src="author.avatar | transformImage('96x96/smart')" :alt="author.name" class="is-rounded" />
                         </figure>
                     </div>
                     <div class="media-content">
                         <p class="title is-3">{{ story.content.title }}</p>
                         <div class="subtitle is-5">
-                            von {{ author.name }} am <time datetime="2016-1-1">{{ story.created_at | formatDate }}</time>
+                            <span v-if="author">von {{ author.name }}</span> am <time datetime="2016-1-1">{{ story.created_at | formatDate }}</time>
                         </div>
                     </div>
                 </div>
