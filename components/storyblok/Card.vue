@@ -30,10 +30,13 @@
             },
             imageURL() {
                 let imageService = '//img2.storyblok.com/',
-                    option = '440x330',
+                    option = this.blok.image_options || '440x330',
                     path = this.blok.image.replace('//a.storyblok.com', '')
                 return imageService + option + path
             },
+        },
+        mounted() {
+            console.log(this.blok)
         },
         methods: {
             pswp() {
