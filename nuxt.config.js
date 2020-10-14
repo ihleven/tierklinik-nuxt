@@ -1,5 +1,5 @@
 export default {
-    // srcDir: 'src/',
+    srcDir: 'src/',
     head: {
         link: [
             {
