@@ -45,7 +45,9 @@
                     </div>
                     {{ post.content.teaser }}
 
-                    <a :href="post.full_slug" class="postlink">_Beitrag lesen_</a>
+                    <nuxt-link :to="post.full_slug">_Lesen_</nuxt-link>
+
+                    <!-- <a :href="post.full_slug" class="postlink">_Beitrag lesen_</a> -->
                 </div>
                 <div class="media-right">
                     <figure class="image is-1-by-1">
