@@ -78,6 +78,9 @@
         mounted() {
             // console.log('leistungen:', this.$store.state.categoryByUuid)
         },
+        head: {
+            title: 'Ratgeber',
+        },
     }
 </script>
 

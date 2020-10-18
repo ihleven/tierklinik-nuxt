@@ -127,6 +127,9 @@
                 return this.story.content.content ? this.$storyapi.richTextResolver.render(this.story.content.content) : ''
             },
         },
+        head: {
+            title: 'Blog',
+        },
     }
 </script>
 

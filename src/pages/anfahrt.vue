@@ -35,6 +35,9 @@
                 story: response.data.story,
             }
         },
+        head: {
+            title: 'Anfahrt',
+        },
     }
 </script>
 

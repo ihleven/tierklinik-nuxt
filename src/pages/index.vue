@@ -76,6 +76,10 @@
         methods: {
             // open() {},
         },
+        head: {
+            title: 'Tierklinik Tschabrun',
+            titleTemplate: '%s',
+        },
     }
 </script>
 

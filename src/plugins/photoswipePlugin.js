@@ -1,4 +1,4 @@
-import PhotoSwipeComponent from './photoswipe.vue'
+import PhotoSwipeComponent from './PhotoSwipe.vue'
 
 let $vm
 

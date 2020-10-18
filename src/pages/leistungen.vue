@@ -129,6 +129,9 @@
         mounted() {
             // console.log('leistungen-route:', this.$route.params.leistung)
         },
+        head: {
+            title: 'Leistungen',
+        },
     }
 </script>
 

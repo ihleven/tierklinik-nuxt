@@ -108,6 +108,9 @@
                 return this.story.content.sections.length ? this.story.content.sections[0].text : ''
             },
         },
+        head: {
+            title: 'Blog',
+        },
     }
 </script>
 

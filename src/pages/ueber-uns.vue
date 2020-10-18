@@ -69,6 +69,9 @@
                 if (section && section.config && section.config[0]) return section.config[0].nav_item
             },
         },
+        head: {
+            title: 'Über uns',
+        },
     }
 </script>
 <style lang="scss" scoped>

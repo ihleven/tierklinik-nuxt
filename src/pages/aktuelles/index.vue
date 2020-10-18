@@ -96,6 +96,9 @@
                 //
             },
         },
+        head: {
+            title: 'Aktuelles',
+        },
     }
 </script>
 
