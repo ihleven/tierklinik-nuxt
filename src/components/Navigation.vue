@@ -27,8 +27,8 @@
                     <n-link :to="'/leistungen'" class="navbar-item">Leistungen</n-link>
                     <!-- <n-link :to="'/fachgebiete'" class="navbar-item">Fachgebiete</n-link> -->
                     <n-link :to="'/ratgeber'" class="navbar-item">Ratgeber</n-link>
-                    <n-link :to="'/aktuelles'" class="navbar-item">Aktuelles</n-link>
-                    <n-link :to="'/blog'" class="navbar-item">Blog</n-link>
+                    <n-link to="/aktuelles" class="navbar-item">Aktuelles</n-link>
+                    <n-link to="/blog" class="navbar-item">Blog</n-link>
                     <!-- <n-link :to="'/kontakt'" class="navbar-item">Kontakt & Anfahrt</n-link> -->
                 </div>
                 <!-- <div class="navbar-end">
