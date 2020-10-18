@@ -64,6 +64,7 @@
             const story = await this.$storyapi.get(`cdn/stories`, { starts_with: 'ankuendigungen' })
 
             this.announcements = story.data.stories.map(story => this.$storyapi.richTextResolver.render(story.content.text))
+            this.$store.commit('setAnnouncement', this.announcements)
         },
         fetchOnServer: false,
         data() {
@@ -71,11 +72,7 @@
                 announcements: [],
             }
         },
-        // computed: {
-        //     announcements() {
-        //         return this.$store.state.announcements
-        //     },
-        // },
+
         methods: {
             scrollTo() {
                 let element = document.getElementById(`besuch`)

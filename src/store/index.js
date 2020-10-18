@@ -9,7 +9,7 @@ export const state = () => ({
     categoryByName: {},
     categoryByUuid: {},
     lostAndFound: [],
-    // announcements: [],
+    announcements: [],
 })
 
 export const mutations = {
@@ -33,9 +33,9 @@ export const mutations = {
     setLanguage(state, language) {
         state.language = language
     },
-    // setAnnouncement(state, announcements) {
-    //     state.announcements = announcements.map(a => this.$storyapi.richTextResolver.render(a.content.text))
-    // },
+    setAnnouncement(state, announcements) {
+        state.announcements = announcements //.map(a => this.$storyapi.richTextResolver.render(a.content.text))
+    },
     setCacheVersion(state, version) {
         state.cacheVersion = version
     },

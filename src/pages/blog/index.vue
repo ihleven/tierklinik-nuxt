@@ -39,7 +39,7 @@
                     <h4 class="posttitle">{{ post.content.title }}</h4>
                     <div class="postsubtitle">
                         <small
-                            >am <time datetime="2016-1-1">{{ post.created_at | formatDate }}</time></small
+                            >am <time datetime="2016-1-1">{{ post.content.datum || post.created_at | formatDate }}</time></small
                         >
                         <small>von {{ post.author.name }}</small>
                     </div>
@@ -88,6 +88,7 @@
                 starts_with: `blog`,
                 is_startpage: false,
                 cv: context.store.state.cacheVersion,
+                sort_by: 'content.datum:desc',
             })
 
             stories.data.stories.forEach(a => {

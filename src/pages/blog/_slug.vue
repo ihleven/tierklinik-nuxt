@@ -63,7 +63,7 @@
                 <div class="media-content">
                     <p class="title is-5">von {{ author.name }}</p>
                     <div class="subtitle is-5">
-                        am <time datetime="2016-1-1">{{ story.created_at | formatDate }}</time>
+                        am <time datetime="2016-1-1">{{ story.content.datum || story.created_at | formatDate }}</time>
                     </div>
                 </div>
             </div>

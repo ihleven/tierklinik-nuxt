@@ -32,12 +32,7 @@
                             </article>
                         </div>
                         <div class="tile is-parent">
-                            <article class="tile is-child box">
-                                <!-- <p class="title is-4">Telefonische Terminvereinbarung</p> -->
-
-                                <p>Bitte vereinbaren Sie <strong>IMMER</strong> telefonisch einen Termin für Behandlungen und Impfungen.</p>
-                                <p>Auf diese Weise können wir lange Wartezeiten vermeiden und den Abstand im Wartezimmer wahren.</p>
-                            </article>
+                            <article class="tile is-child box" v-html="text1"></article>
                         </div>
                     </div>
 
@@ -97,27 +92,16 @@
                 </div>
 
                 <div class="tile is-parent is-vertical">
-                    <article class="tile is-child card is-shady">
-                        <div class="card-image notification is-danger has-text-centered" style="border-bottom-left-radius:0;border-bottom-right-radius:0;margin-bottom: 0;">
-                            <p class="title">Notdienst</p>
-                            <!-- <p class="subtitle is-5">
-                                Außerhalb der Öffungszeiten
-                            </p> -->
-                        </div>
-                        <div class="card-content content is-medium">
-                            <p>
-                                Außerhalb unserer Öffungszeiten können Sie uns unter 05552 66755 kontaktieren.
-                            </p>
-                            <p>
-                                In den meisten Zeiten erreichen Sie uns persönlich oder Sie erfahren auf Tonband die Telefonnummer des diensthabenden Tierarztes
-                            </p>
-                            <p>
-                                Im Notdiest verrechnen wir eine Notdienstgebühr.
-                            </p>
+                    <article class="tile is-child">
+                        <div class="card is-shady notdienst">
+                            <div class="card-image notification is-danger has-text-centered" style="border-bottom-left-radius:0;border-bottom-right-radius:0">
+                                <p class="title">Notdienst</p>
+                            </div>
+                            <div class="card-content content" v-html="notdienst"></div>
                         </div>
                     </article>
 
-                    <article class="tile is-child box">Innerhalb der Öffnungszeiten können Sie <strong>Medikamente und Futter ohne Voranmeldung</strong> abholen.</article>
+                    <article class="tile is-child box info" v-html="info"></article>
                 </div>
             </div>
 
@@ -136,11 +120,28 @@
         props: ['blok'],
         computed: {
             announcements() {
-                // console.log('authors:', this.$store.state.authors)
                 return this.$store.state.announcements
+            },
+            text1() {
+                return this.$storyapi.richTextResolver.render(this.blok.text1)
+            },
+            notdienst() {
+                return this.$storyapi.richTextResolver.render(this.blok.notdienst)
+            },
+            info() {
+                return this.$storyapi.richTextResolver.render(this.blok.info)
             },
         },
     }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+    .notdienst {
+        margin-bottom: 0;
+    }
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

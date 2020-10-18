@@ -22,7 +22,7 @@
                                 <div class="media-content">
                                     <p class="title is-4">{{ post.content.title }}</p>
                                     <div class="subtitle is-6">
-                                        <span v-if="post.author && post.author.name">von {{ post.author.name }}</span> am <time>{{ post.created_at | formatDate }}</time>
+                                        <span v-if="post.author && post.author.name">von {{ post.author.name }}</span> am <time>{{ post.content.datum || post.created_at | formatDate }}</time>
                                     </div>
                                 </div>
                             </div>
@@ -62,6 +62,7 @@
                 version: version,
                 starts_with: 'posts',
                 cv: context.store.state.cacheVersion,
+                sort_by: 'content.datum:desc',
             })
 
             let articles = stories.data.stories.filter(s => s.content.component == 'post')

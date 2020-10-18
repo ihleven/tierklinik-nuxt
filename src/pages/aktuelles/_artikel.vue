@@ -15,7 +15,7 @@
                     <div class="media-content">
                         <p class="title is-3">{{ story.content.title }}</p>
                         <div class="subtitle is-5">
-                            <span v-if="author">von {{ author.name }}</span> am <time datetime="2016-1-1">{{ story.created_at | formatDate }}</time>
+                            <span v-if="author">von {{ author.name }}</span> am <time datetime="2016-1-1">{{ story.content.datum || story.created_at | formatDate }}</time>
                         </div>
                     </div>
                 </div>
