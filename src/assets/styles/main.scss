@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+
+
+$navbar-item-hover-color: hsl(17, 71%, 53%);
+
+$navbar-height: 5rem;
+
+//$family-sans-serif: 'Clear sans';
+$navbar-breakpoint: 800px;
+
+$body-family: 'Clear Sans';
+
+// svg {
+//     width: 100%;
+//     height: 100%;
+// }
+
+.page-enter-active, .page-leave-active {
+    transition: opacity .1s;
+}
+
+.page-enter, .page-leave-to {
+    opacity: 0;
+}
+
+@import 'bulma/bulma.sass';
+//@import './hamburger.sass';
+
+
+
+//@import '~bulma'
+
+.outline {
+    color: black !important;
+    text-shadow: 1px 1px 0px white, 1px -1px 0px white, -1px 1px 0px white, -1px -1px 0px white;
+}
+.outline4 {
+    color: white !important;
+    text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;
+}
+
+
+html,
+body {
+    background: #eff3f4;
+    // font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+.box.cta {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 0;
+}
+.features {
+    padding: 5rem 0;
+}
+
+.sandbox {
+    padding: 5rem 0;
+}
+.tile.notification {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+/*adds font awesome stars*/
+// footer li:before {
+//     content: '\f1b2';
+//     font-family: 'FontAwesome';
+//     float: left;
+//     margin-left: -1.5em;
+//     color: #147efb;
+// }
+body {
+    font-family: 'Zilla Slab', Helvetica, sans-serif;
+    line-height: 1;
+    font-size: 18px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }

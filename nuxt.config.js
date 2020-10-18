@@ -1,5 +1,10 @@
 export default {
+    srcDir: 'src/',
+
     head: {
+        title: '',
+        titleTemplate: '%s | Tierklinik Tschabrun',
+
         link: [
             {
                 rel: 'stylesheet',
@@ -9,35 +14,17 @@ export default {
         ],
     },
     modules: [
-        //'@nuxtjs/axios',
-        //'@nuxtjs/proxy',
+        //
         '@nuxtjs/pwa',
         ['storyblok-nuxt', { accessToken: 'srr3G6rQFYrg7JXUzHfFNwtt', cacheProvider: 'memory' }],
-        // With options
-        [
-            'nuxt-leaflet',
-            {
-                /* module options */
-            },
-        ],
     ],
     css: [
-        // Load a Node.js module directly (here it's a Sass file)
-        //'bulma',
-        'typeface-clear-sans',
+        // 'typeface-clear-sans',
         '~/assets/styles/main.scss',
     ],
-    // proxy: {
-    //     '/api': {
-    //         target: 'http://tierklinik.webfactional.com',
-    //         pathRewrite: {
-    //             '^/api': '/api',
-    //         },
-    //     },
-    // },
-    // package.json: "@nuxtjs/proxy": "^1.3.3",
+
     plugins: ['~plugins/filters.js', '~/plugins/components', { src: '~/plugins/photoswipe', ssr: false }],
-    // plugins: ['@/plugins/gmaps'],
+
     router: {
         middleware: 'languageDetection',
         linkActiveClass: 'is-active',
