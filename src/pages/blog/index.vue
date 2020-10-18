@@ -45,7 +45,7 @@
                     </div>
                     {{ post.content.teaser }}
 
-                    <nuxt-link :to="post.full_slug" class="detaillink">_Lesen_</nuxt-link>
+                    <nuxt-link :to="'/blog/' + post.slug" class="detaillink">_Lesen_</nuxt-link>
 
                     <!-- <a :href="post.full_slug" class="postlink">_Beitrag lesen_</a> -->
                 </div>

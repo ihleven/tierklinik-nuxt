@@ -1,6 +1,6 @@
 export default {
     srcDir: 'src/',
-
+    target: 'static',
     head: {
         title: '',
         titleTemplate: '%s | Tierklinik Tschabrun',
