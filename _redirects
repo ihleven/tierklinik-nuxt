@@ -1,0 +1,8 @@
+# Redirect with a 301
+/home             /           301
+/sprechstunden    /           301
+/inhaltsübersicht /           301
+/kontakt          /           301
+/rundgang         /ueber-uns  301
+/fachgebiete      /leistungen 301
+/impressum        /           302
