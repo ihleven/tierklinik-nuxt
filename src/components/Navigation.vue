@@ -9,7 +9,7 @@
                         Tierklinik
                         <div class="subtitle is-6">
                             Tschabrun
-                            <small style="color: #aaa">.com</small>
+                            <small style="color: #aaa;">.com</small>
                         </div>
                     </h1>
                 </a>
@@ -25,8 +25,9 @@
                     <n-link :to="'/ueber-uns'" class="navbar-item">Über uns</n-link>
                     <n-link :to="'/leistungen'" class="navbar-item">Leistungen</n-link>
                     <n-link :to="'/ratgeber'" class="navbar-item">Ratgeber</n-link>
-                    <a href="/aktuelles" class="navbar-item">Aktuelles</a>
-                    <a href="/blog" class="navbar-item">Blog</a>
+                    <n-link :to="'/aktuelles'" class="navbar-item">Aktuelles</n-link>
+                    <n-link :to="'/blog'" class="navbar-item">Blog</n-link>
+                    <n-link :to="'/pets'" class="navbar-item">Pets</n-link>
                 </div>
                 <!-- <div class="navbar-end">
                     <div class="tabs is-right">
