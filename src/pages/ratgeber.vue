@@ -20,115 +20,115 @@
 </template>
 
 <script>
-    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 
-    // import Navigation from '@/components/Navigation.vue'
-    import PageHero from '@/components/PageHero'
-    import Footer from '@/components/Footer'
+// import Navigation from '@/components/Navigation.vue'
+import PageHero from '@/components/PageHero'
+import Footer from '@/components/Footer'
 
-    export default {
-        layout: 'default',
-        components: {
-            PageHero,
-            Footer,
+export default {
+    components: {
+        PageHero,
+        Footer,
+    },
+    mixins: [storyblokLivePreview],
+    layout: 'default',
+    asyncData(context) {
+        const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+        const endpoint = `cdn/stories/ratgeber`
+
+        return context.app.$storyapi
+            .get(endpoint, {
+                version,
+                cv: context.store.state.cacheVersion,
+            })
+            .then((res) => {
+                return res.data
+            })
+            .catch((res) => {
+                context.error({ statusCode: res.response.status, message: res.response.data })
+            })
+    },
+
+    data() {
+        return {
+            story: { content: { body: '' } },
+            menuOpen: false,
+            news: '',
+        }
+    },
+    head: {
+        title: 'Ratgeber',
+    },
+    computed: {
+        categories() {
+            return this.story.content.categories.map((c) => this.$store.state.categoryByUuid[c])
         },
-        mixins: [storyblokLivePreview],
-        asyncData(context) {
-            let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-            let endpoint = `cdn/stories/ratgeber`
-
-            return context.app.$storyapi
-                .get(endpoint, {
-                    version: version,
-                    cv: context.store.state.cacheVersion,
-                })
-                .then(res => {
-                    return res.data
-                })
-                .catch(res => {
-                    context.error({ statusCode: res.response.status, message: res.response.data })
-                })
-        },
-
-        data() {
-            return {
-                story: { content: { body: '' } },
-                menuOpen: false,
-                news: '',
+        category() {
+            if (this.$route.params.category) {
+                return this.$store.state.categoryByName[this.$route.params.category]
             }
+            return null
         },
-        computed: {
-            categories() {
-                return this.story.content.categories.map(c => this.$store.state.categoryByUuid[c])
-            },
-            category() {
-                if (this.$route.params.category) {
-                    return this.$store.state.categoryByName[this.$route.params.category]
-                }
-                return null
-            },
-            image() {
-                return this.category ? this.category.content.image : 'https:' + this.story.content.hero_image
-            },
-            subheading() {
-                return this.category ? this.category.content.name : null
-            },
+        image() {
+            return this.category ? this.category.content.image : 'https:' + this.story.content.hero_image
         },
+        subheading() {
+            return this.category ? this.category.content.name : null
+        },
+    },
 
-        mounted() {
-            // console.log('leistungen:', this.$store.state.categoryByUuid)
-        },
-        head: {
-            title: 'Ratgeber',
-        },
-    }
+    mounted() {
+        // console.log('leistungen:', this.$store.state.categoryByUuid)
+    },
+}
 </script>
 
 <style scoped>
-    .category card-image {
-        /* width: 240px; */
-        /* height: 160px; */
-    }
-    .card.is-horizontal {
-        flex-direction: row;
-        display: flex;
-        flex-basis: 50ex;
-        flex-grow: 0;
-        flex-shrink: 1;
-        align-items: center;
+.category card-image {
+    /* width: 240px; */
+    /* height: 160px; */
+}
+.card.is-horizontal {
+    flex-direction: row;
+    display: flex;
+    flex-basis: 50ex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    align-items: center;
+}
+
+.card.is-horizontal .card-image {
+    align-self: center;
+}
+.card-image img {
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+}
+.card.is-horizontal .image {
+    min-height: 100%;
+}
+
+.card.is-horizontal .card-content {
+    flex: 1;
+}
+
+.card.is-horizontal .card-content {
+    padding-left: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 0.8em;
+}
+
+.card.is-horizontal {
+    ul {
+        list-style: none;
+        margin: 0;
     }
 
-    .card.is-horizontal .card-image {
-        align-self: center;
+    .is-divider {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
-    .card-image img {
-        border-bottom-left-radius: 4px;
-        border-top-right-radius: 0;
-    }
-    .card.is-horizontal .image {
-        min-height: 100%;
-    }
-
-    .card.is-horizontal .card-content {
-        flex: 1;
-    }
-
-    .card.is-horizontal .card-content {
-        padding-left: 1em;
-        padding-top: 0;
-        padding-bottom: 0;
-        font-size: 0.8em;
-    }
-
-    .card.is-horizontal {
-        ul {
-            list-style: none;
-            margin: 0;
-        }
-
-        .is-divider {
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-    }
+}
 </style>

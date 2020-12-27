@@ -1,15 +1,15 @@
 <template>
-    <section v-editable="blok" class="p-4">
+    <article v-editable="p.content" class="p-4">
         <!-- <div class="container intro">
             <h2 class="title is-3 is-spaced">{{ blok.title }}</h2>
             <p class="subtitle is-5">
                 {{ blok.title }}
             </p>
         </div> -->
-
         <!-- component -->
         <div class="w-full sm:flex rounded overflow-hidden shadow">
-            <img :src="resizedImage" :alt="blok.image.alt" class="object-cover w-full sm:w-3/5" />
+            <img :src="resizedImage(p)" class="object-cover w-full sm:w-3/5" />
+
             <!-- <div
                 class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style="background-image: url('https://tailwindcss.com/img/card-left.jpg');"
@@ -24,9 +24,9 @@
                         Members only
                     </p> -->
                     <div class="text-black font-bold text-xl mb-2">
-                        {{ blok.name }} <small v-if="age">({{ age }} Jahre)</small>
+                        {{ p.content.name }} <small v-if="age(p)">({{ age(p) }} Jahre)</small>
                     </div>
-                    <p class="text-grey-darker text-base">{{ blok.description }}</p>
+                    <p class="text-grey-darker text-base">{{ p.content.description }}</p>
                 </div>
                 <!-- <div class="flex items-center">
                     <img class="w-10 h-10 rounded-full mr-4" src="https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg" alt="Avatar of Jonathan Reinink" />
@@ -37,32 +37,37 @@
                 </div> -->
             </div>
         </div>
-    </section>
+    </article>
 </template>
 
 <script>
-    export default {
-        // name: 'SectionPets',
-        props: ['blok'],
-        computed: {
-            age() {
-                if (this.blok.birthdate) {
-                    const years = new Date(new Date() - new Date(this.blok.birthdate)).getFullYear() - 1970
+import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 
-                    return years
-                }
-                return this.blok.age
-            },
-            resizedImage() {
-                let imageService = '//img2.storyblok.com/',
-                    option = '1000x/smart'
-                return this.blok.image.filename.replace('//a.storyblok.com', imageService + option)
-            },
+export default {
+    mixins: [storyblokLivePreview],
+    props: ['p'],
+    computed: {},
+    mounted() {
+        console.log('patient:', this.p)
+    },
+    methods: {
+        age(patient) {
+            if (patient.content.geburtstag) {
+                const years = new Date(new Date() - new Date(patient.content.geburtstag)).getFullYear() - 1970
+
+                return years
+            }
+            return patient.content.age
         },
-        mounted() {
-            console.log('section-pets:', this.blok._uid, this.blok.tiles)
+        resizedImage(patient) {
+            if (patient.content.images.length === 0) return ''
+            const imageService = '//img2.storyblok.com/'
+            const option = '1000x/smart'
+
+            return patient.content.images[0].filename.replace('//a.storyblok.com', imageService + option)
         },
-    }
+    },
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>
