@@ -230,6 +230,7 @@ article {
     margin: 3rem;
     .postimg {
         border-radius: 1rem;
+        width: 120px;
     }
     .posttitle {
         color: #363636;
