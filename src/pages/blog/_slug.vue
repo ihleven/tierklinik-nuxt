@@ -21,10 +21,10 @@
                     </div>
                 </a>
                 <ul>
-                    <li><n-link to="/ueber-uns">Über uns</n-link></li>
+                    <!-- <li><n-link to="/ueber-uns">Über uns</n-link></li>
                     <li><n-link to="/leistungen">Leistungen</n-link></li>
-                    <li><n-link to="/ratgeber">Ratgeber</n-link></li>
-                    <li><n-link to="/aktuelles">Aktuelles</n-link></li>
+                    <li><n-link to="/ratgeber">Ratgeber</n-link></li> 
+                    <li><n-link to="/aktuelles">Aktuelles</n-link></li>-->
                     <li><n-link to="/blog">Blog</n-link></li>
                 </ul>
             </nav>
@@ -78,7 +78,7 @@
             </div>
             <br />
             <div v-editable="story.content" class="content">
-                <blockquote>{{ story.content.teaser }}</blockquote>
+                <blockquote v-if="story.content.teaser">{{ story.content.teaser }}</blockquote>
                 <div class="subtitle" v-html="body"></div>
                 <div class="content" v-html="content"></div>
             </div>
@@ -125,9 +125,6 @@ export default {
     data() {
         return { story: { content: { body: '' } } }
     },
-    head: {
-        title: 'Blog',
-    },
     computed: {
         author() {
             return this.$store.state.authors[this.story.content.author]
@@ -138,6 +135,9 @@ export default {
         content() {
             return this.story.content.content ? this.$storyapi.richTextResolver.render(this.story.content.content) : ''
         },
+    },
+    head: {
+        title: 'Blog',
     },
 }
 </script>
