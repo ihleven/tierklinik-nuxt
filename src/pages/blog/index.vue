@@ -12,12 +12,12 @@
                     </div>
                 </a>
                 <ul>
-                    <li><n-link to="/ueber-uns">Über uns</n-link></li>
+                    <!-- <li><n-link to="/ueber-uns">Über uns</n-link></li>
                     <li><n-link to="/leistungen">Leistungen</n-link></li>
                     <li><n-link to="/ratgeber">Ratgeber</n-link></li>
                     <li><n-link to="/aktuelles">Aktuelles</n-link></li>
                     <li><n-link to="/patienten">Patienten</n-link></li>
-                    <li><n-link to="/blog">Blog</n-link></li>
+                    <li><n-link to="/blog">Blog</n-link></li> -->
                 </ul>
             </nav>
         </header>
@@ -39,7 +39,7 @@
             <article v-for="post in posts" :key="post.content._uid" class="media">
                 <figure class="media-left">
                     <img
-                        :src="post.content.image | transformImage('120x120/smart')"
+                        :src="post.content.image | transformImage('320x320/smart')"
                         :alt="post.content.title"
                         class="postimg"
                     />
@@ -131,6 +131,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'bulma/bulma.sass';
+
 .wrapper {
     display: grid;
 
@@ -189,6 +191,22 @@ footer {
         margin: 0;
         overflow-y: unset;
     }
+
+    article.media {
+        display: block;
+        margin: 3rem 2rem;
+
+        .media-left {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+        .postimg {
+            width: 100%;
+        }
+        .media-right {
+            display: none;
+        }
+    }
 }
 .intro {
     padding: 4rem 4rem 2rem 4rem;
@@ -198,6 +216,9 @@ footer {
     line-height: 1.25;
     text-align: left;
     word-break: break-word;
+    @include until($tablet) {
+        padding: 3rem 2rem 1rem 2rem;
+    }
 }
 .detaillink {
     display: block;
