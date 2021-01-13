@@ -14,11 +14,12 @@
                         </article>
                     </div>
                     <div class="column is-half">
-                        <article class="notification  has-background-grey-dark has-text-light">
+                        <article class="notification has-background-grey-dark has-text-light">
                             <h4 class="title is-size-4">Sitemap</h4>
-                            <ul style="list-style:none">
+                            <ul style="list-style: none">
                                 <li class="is-size-5"><a href="/">Startseite</a></li>
                                 <li class="is-size-5"><a href="/ueber-uns">Über uns</a></li>
+                                <li class="is-size-5"><a href="/patienten">Patienten</a></li>
                                 <li class="is-size-5"><a href="/leistungen">Unsere Leistungen</a></li>
                                 <li class="is-size-5"><a href="/ratgeber">Ratgeber</a></li>
                                 <li class="is-size-5"><a href="/aktuelles">Aktuelles</a></li>
@@ -125,29 +126,29 @@
 </template>
 
 <style lang="scss" scoped>
-    .footer {
-        // margin-top: 5rem;
-        // padding: 10rem;
+.footer {
+    // margin-top: 5rem;
+    // padding: 10rem;
 
-        ul.links {
-            padding: 3rem;
-            list-style: none;
-            font: 1em/1.25 Helvetica;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            li {
-                padding: 0.25rem 0.5rem;
+    ul.links {
+        padding: 3rem;
+        list-style: none;
+        font: 1em/1.25 Helvetica;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            padding: 0.25rem 0.5rem;
 
-                a {
-                    color: rgb(150, 146, 146);
-                    &:hover {
-                        color: rgb(243, 237, 237);
-                        // background-color: hsl(0, 0%, 24%);
-                        border-bottom: 1px solid white;
-                    }
+            a {
+                color: rgb(150, 146, 146);
+                &:hover {
+                    color: rgb(243, 237, 237);
+                    // background-color: hsl(0, 0%, 24%);
+                    border-bottom: 1px solid white;
                 }
             }
         }
     }
+}
 </style>

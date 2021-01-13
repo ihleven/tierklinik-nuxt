@@ -56,19 +56,19 @@
     export default {
         name: 'SectionLostAndFound',
         filters: {
-            formatDate: date => Intl.DateTimeFormat('de-AT').format(new Date(date)),
+            formatDate: (date) => Intl.DateTimeFormat('de-AT').format(new Date(date)),
         },
         props: ['blok'],
         computed: {
             lost() {
                 return this.$store.state.lostAndFound
-                    .filter(i => !i.content.found || !i.content.message)
+                    .filter((i) => !i.content.found || !i.content.message)
                     .sort((a, b) => (a.content.lost > b.content.lost ? -1 : 1))
                     .slice(0, 3)
             },
             found() {
                 return this.$store.state.lostAndFound
-                    .filter(i => i.content.found && i.content.message)
+                    .filter((i) => i.content.found && i.content.message)
                     .sort((a, b) => (a.content.found > b.content.found ? -1 : 1))
                     .slice(0, 3)
             },

@@ -14,11 +14,11 @@ export const state = () => ({
 
 export const mutations = {
     setAuthors(state, authors) {
-        authors.forEach(a => (state.authors[a.uuid] = a.content))
+        authors.forEach((a) => (state.authors[a.uuid] = a.content))
     },
     setCategories(state, stories) {
         state.categories = stories
-        stories.forEach(category => {
+        stories.forEach((category) => {
             state.categoryByName[category.slug] = category
             state.categoryByUuid[category.uuid] = category
         })
@@ -34,7 +34,7 @@ export const mutations = {
         state.language = language
     },
     setAnnouncement(state, announcements) {
-        state.announcements = announcements //.map(a => this.$storyapi.richTextResolver.render(a.content.text))
+        state.announcements = announcements // .map(a => this.$storyapi.richTextResolver.render(a.content.text))
     },
     setCacheVersion(state, version) {
         state.cacheVersion = version
@@ -53,7 +53,7 @@ export const actions = {
                 // version: context.version,
                 starts_with: 'authors',
             })
-            .then(res => {
+            .then((res) => {
                 commit('setAuthors', res.data.stories)
             })
     },
@@ -63,7 +63,7 @@ export const actions = {
                 // version: context.version,
                 starts_with: 'categories',
             })
-            .then(res => {
+            .then((res) => {
                 commit('setCategories', res.data.stories)
             })
     },
@@ -76,18 +76,18 @@ export const actions = {
                 // sort_by: 'position',
                 sort_by: 'content.Lost',
             })
-            .then(res => {
+            .then((res) => {
                 commit('setLostAndFound', res.data.stories)
             })
     },
     loadSettings({ commit }, context) {
         return (
             this.$storyapi
-                //.get(`cdn/stories/${context.language}/settings`, {
+                // .get(`cdn/stories/${context.language}/settings`, {
                 .get(`cdn/stories/settings`, {
                     version: context.version,
                 })
-                .then(res => {
+                .then((res) => {
                     commit('setSettings', res.data.story.content)
                 })
         )
