@@ -11,7 +11,7 @@
     <div class="wrapper">
         <header>
             <nav class="topbar">
-                <a class="logo" href="/">
+                <n-link class="logo" to="/">
                     <img src="~assets/logo/logo-tierklinik-white.svg" alt="Logo" />
 
                     <div>
@@ -19,7 +19,7 @@
                         Tschabrun
                         <!-- <small>.com</small> -->
                     </div>
-                </a>
+                </n-link>
                 <ul>
                     <!-- <li><n-link to="/ueber-uns">Über uns</n-link></li>
                     <li><n-link to="/leistungen">Leistungen</n-link></li>
@@ -102,7 +102,8 @@ import Footer from '@/components/Footer'
 export default {
     components: { PageHero, Breadcrumbs, Footer },
     filters: {
-        formatDate: (date) => Intl.DateTimeFormat('de-AT').format(new Date(date)),
+        formatDate: (date) =>
+            typeof date === 'string' ? Intl.DateTimeFormat('de-AT').format(new Date(date.substring(0, 10))) : '',
     },
     mixins: [storyblokLivePreview],
     layout: 'start',
