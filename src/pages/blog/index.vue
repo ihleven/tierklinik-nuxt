@@ -16,6 +16,7 @@
                     <li><n-link to="/leistungen">Leistungen</n-link></li>
                     <li><n-link to="/ratgeber">Ratgeber</n-link></li>
                     <li><n-link to="/aktuelles">Aktuelles</n-link></li>
+                    <li><n-link to="/patienten">Patienten</n-link></li>
                     <li><n-link to="/blog">Blog</n-link></li>
                 </ul>
             </nav>
@@ -118,13 +119,13 @@ export default {
     data() {
         return { total: 0, data: { stories: [] } }
     },
-    head: {
-        title: 'Blog',
-    },
     computed: {
         intro() {
             return this.story.content.sections.length ? this.story.content.sections[0].text : ''
         },
+    },
+    head: {
+        title: 'Blog',
     },
 }
 </script>
