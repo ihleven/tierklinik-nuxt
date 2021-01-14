@@ -48,7 +48,7 @@ export default {
     props: ['p'],
     computed: {},
     mounted() {
-        console.log('patient:', this.p)
+        // console.log('patient:', this.p)
     },
     methods: {
         age(patient) {

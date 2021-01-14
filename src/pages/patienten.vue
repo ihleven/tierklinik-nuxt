@@ -24,6 +24,7 @@ export default {
     components: { PageHero, Footer, SectionPatients },
     mixins: [storyblokLivePreview],
     layout: 'default',
+
     async asyncData(context) {
         const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
         try {
@@ -40,15 +41,20 @@ export default {
     },
     data() {
         return {
+            current: null,
+            total: 1,
+            pageSize: 20,
+            numPages: 1,
+            patienten: [],
             page: { content: { body: '' } },
         }
-    },
-    head: {
-        title: 'Patienten',
     },
 
     mounted() {
         console.log('patienten page:', this.page)
+    },
+    head: {
+        title: 'Patienten',
     },
 }
 </script>
