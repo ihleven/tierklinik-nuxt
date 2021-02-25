@@ -6,7 +6,7 @@
                     <img src="~assets/logo/logo-tierklinik.svg" alt="Logo" />
 
                     <h1 class="title is-4">
-                        Tierklinik
+                        Tierärzte
                         <div class="subtitle is-6">
                             Tschabrun
                             <small style="color: #aaa">.com</small>

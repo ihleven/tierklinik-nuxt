@@ -10,7 +10,7 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-2">Tierklinik Nüziders</h1>
+                <h1 class="title is-2">Tierärzte in Nüziders</h1>
                 <h2 class="subtitle is-4">Dr. Rudolf &amp; Dr. Sylvia Tschabrun</h2>
 
                 <!-- <h3 class="title is-3 klinik"></h3> -->

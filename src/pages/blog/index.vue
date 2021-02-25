@@ -6,7 +6,7 @@
                     <img src="~assets/logo/logo-tierklinik-white.svg" alt="Logo" />
 
                     <div>
-                        <b> Tierklinik </b>
+                        <b> Tierärzte </b>
                         Tschabrun
                         <!-- <small>.com</small> -->
                     </div>

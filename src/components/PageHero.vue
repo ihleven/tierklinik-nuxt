@@ -30,74 +30,75 @@
 </template>
 
 <script>
-    // import TopBar from '@/components/TopBar.vue'
-    // import Navigation from '@/components/Navigation.vue'
-
-    export default {
-        // components: { Navigation },
-        props: {
-            image: { type: String, default: 'http://a.storyblok.com/f/72564/2404x1745/acf542d718/stock-2404x1745-teaser-katze-hintergrund-grau.jpg' },
-            heading: String,
-            subheading: String,
+export default {
+    // components: { Navigation },
+    props: {
+        image: {
+            type: String,
+            default:
+                'http://a.storyblok.com/f/72564/2404x1745/acf542d718/stock-2404x1745-teaser-katze-hintergrund-grau.jpg',
         },
-        computed: {
-            resizedImage() {
-                let imageService = '//img2.storyblok.com/',
-                    option = '1600x600/smart'
-                return this.image.replace('//a.storyblok.com', imageService + option)
-            },
+        heading: String,
+        subheading: String,
+    },
+    computed: {
+        resizedImage() {
+            const imageService = '//img2.storyblok.com/'
+            const option = '1600x600/smart'
+            return this.image.replace('//a.storyblok.com', imageService + option)
         },
-    }
+    },
+}
 </script>
 
 <style lang="scss" scoped>
-    .hero-body .title span,
-    .hero-body .subtitle span {
-        font-family: 'Zilla Slab', Helvetica, sans-serif;
-        color: hsl(192, 17%, 99%) !important;
-        color: #fff;
-        background-color: rgba(10, 10, 10, 0.7);
-        text-shadow: 1px 1px 0 #043e42, 0 0 0.5rem rgba(10, 10, 10, 0.5);
-        padding: 0 1rem;
-        word-break: normal;
-    }
-    .hero-body .subtitle {
-        color: hsl(192, 17%, 99%) !important;
-        padding-top: 2rem;
-        line-height: 1.5;
-    }
+.hero-body .title span,
+.hero-body .subtitle span {
+    font-family: 'Zilla Slab', Helvetica, sans-serif;
+    color: hsl(192, 17%, 99%) !important;
+    color: #fff;
+    background-color: rgba(10, 10, 10, 0.7);
+    text-shadow: 1px 1px 0 #043e42, 0 0 0.5rem rgba(10, 10, 10, 0.5);
+    padding: 0 1rem;
+    word-break: normal;
+}
+.hero-body .subtitle {
+    color: hsl(192, 17%, 99%) !important;
+    padding-top: 2rem;
+    line-height: 1.5;
+}
 
-    .hero {
-        background-size: cover;
-        background-position: 50% 50%;
-        background-image: url('http://a.storyblok.com/f/72564/2404x1745/acf542d718/stock-2404x1745-teaser-katze-hintergrund-grau.jpg');
+.hero {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('http://a.storyblok.com/f/72564/2404x1745/acf542d718/stock-2404x1745-teaser-katze-hintergrund-grau.jpg');
 
-        .navbar {
-            background: rgba(250, 250, 250, 0.9);
-            .navbar-item {
-                img {
-                    max-height: unset;
-                    width: 4rem;
-                    height: 4rem;
-                    padding-left: 1rem;
-                }
-                h1 {
-                    padding-left: 1rem;
-                }
-                &.logo {
-                    // padding: 1rem 1rem 1rem 5rem;
-                    // padding: 0 1rem 0 5rem;
-                    // background: url(~assets/tierklinik/logo-tierklinik.svg) no-repeat center center;
-                    // background-size: contain;
-                    // background-position: 0% 50%;
-                }
-                a {
-                    border-bottom: 1px solid transparent;
-                    &:hover a {
-                        border-bottom: 1px solid currentColor;
-                    }
+    .navbar {
+        background: rgba(250, 250, 250, 0.9);
+        .navbar-item {
+            img {
+                max-height: unset;
+                width: 4rem;
+                height: 4rem;
+                padding-left: 1rem;
+            }
+            h1 {
+                padding-left: 1rem;
+            }
+            &.logo {
+                // padding: 1rem 1rem 1rem 5rem;
+                // padding: 0 1rem 0 5rem;
+                // background: url(~assets/tierklinik/logo-tierklinik.svg) no-repeat center center;
+                // background-size: contain;
+                // background-position: 0% 50%;
+            }
+            a {
+                border-bottom: 1px solid transparent;
+                &:hover a {
+                    border-bottom: 1px solid currentColor;
                 }
             }
         }
     }
+}
 </style>

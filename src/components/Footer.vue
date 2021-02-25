@@ -5,7 +5,7 @@
                 <div class="columns is-multiline">
                     <div class="column is-half">
                         <article class="notification has-background-grey-dark has-text-light">
-                            <p class="title is-3">Tierklinik Tschabrun</p>
+                            <p class="title is-3">Tierärzte Tschabrun</p>
                             <p class="title is-5"></p>
                             <p>Elserweg 8a<br />6714 Nüziders</p>
                             <p>tel: +43 213141234 123</p>

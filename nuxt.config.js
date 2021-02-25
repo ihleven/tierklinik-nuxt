@@ -3,7 +3,7 @@ export default {
     target: 'static',
     head: {
         title: '',
-        titleTemplate: '%s | Tierklinik Tschabrun',
+        titleTemplate: '%s | Tierärzte Tschabrun',
 
         link: [
             {
