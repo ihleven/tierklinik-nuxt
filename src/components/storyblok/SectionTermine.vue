@@ -65,11 +65,11 @@
                                         <td>9h - 11h</td>
                                         <td>16h - 19h</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <th>Mittwoch</th>
                                         <td>9h - 11h</td>
                                         <td></td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <th>Donnerstag</th>
                                         <td>9h - 11h</td>
