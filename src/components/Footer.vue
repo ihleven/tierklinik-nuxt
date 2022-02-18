@@ -8,8 +8,8 @@
                             <p class="title is-3">Tierärzte Tschabrun</p>
                             <p class="title is-5"></p>
                             <p>Elserweg 8a<br />6714 Nüziders</p>
-                            <p>tel: +43 213141234 123</p>
-                            <p>fax: +43 213141234 123</p>
+                            <p>tel: +43 5552 66755</p>
+                            <p>fax: +43 5552 667554</p>
                             <p>mail: mail@tierklinik-tschabrun.com</p>
                         </article>
                     </div>

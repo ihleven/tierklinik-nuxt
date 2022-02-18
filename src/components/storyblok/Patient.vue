@@ -60,6 +60,7 @@ export default {
             return patient.content.age
         },
         resizedImage(patient) {
+            if (!patient || !patient.content || !patient.content.images) return ''
             if (patient.content.images.length === 0) return ''
             const imageService = '//img2.storyblok.com/'
             const option = '1000x/smart'
