@@ -42,7 +42,7 @@
         </nav>
 
         <main class="section">
-            <a class="backlink" href="/blog"
+            <n-link class="backlink" to="/blog"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -57,7 +57,7 @@
                 >
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
-                zurück zum Blog</a
+                zurück zum Blog</n-link
             >
             <div class="media">
                 <div class="media-left">
@@ -128,7 +128,7 @@ export default {
     },
     computed: {
         author() {
-            return this.$store.state.authors[this.story.content.author]
+            return this.$store.state.authors[this.story.content.author] || {}
         },
         body() {
             return this.story.content.body ? marked(this.story.content.body) : ''

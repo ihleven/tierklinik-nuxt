@@ -5,7 +5,7 @@
                 <div class="tile is-vertical is-8">
                     <div class="tile">
                         <div class="tile is-parent is-vertical">
-                            <article class="tile is-child box notification is-info" style="align-items: center;">
+                            <article class="tile is-child box notification is-info" style="align-items: center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="36"
@@ -77,7 +77,7 @@
                                     </tr>
                                     <tr>
                                         <th>Freitag</th>
-                                        <td>9h - 11h</td>
+                                        <td>Nur mit Termin</td>
                                         <td></td>
                                     </tr>
                                     <tr>
@@ -94,7 +94,10 @@
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child">
                         <div class="card is-shady notdienst">
-                            <div class="card-image notification is-danger has-text-centered" style="border-bottom-left-radius:0;border-bottom-right-radius:0">
+                            <div
+                                class="card-image notification is-danger has-text-centered"
+                                style="border-bottom-left-radius: 0; border-bottom-right-radius: 0"
+                            >
                                 <p class="title">Notdienst</p>
                             </div>
                             <div class="card-content content" v-html="notdienst"></div>
@@ -107,7 +110,12 @@
 
             <div class="tile is-ancestor">
                 <div class="tile is-vertical is-parent">
-                    <div v-for="a in announcements" :key="a.id" class="tile is-child box notification is-warning has-text-centered" v-html="a"></div>
+                    <div
+                        v-for="a in announcements"
+                        :key="a.id"
+                        class="tile is-child box notification is-warning has-text-centered"
+                        v-html="a"
+                    ></div>
                 </div>
             </div>
         </div>
@@ -115,33 +123,33 @@
 </template>
 
 <script>
-    export default {
-        name: 'SectionTermine',
-        props: ['blok'],
-        computed: {
-            announcements() {
-                return this.$store.state.announcements
-            },
-            text1() {
-                return this.$storyapi.richTextResolver.render(this.blok.text1)
-            },
-            notdienst() {
-                return this.$storyapi.richTextResolver.render(this.blok.notdienst)
-            },
-            info() {
-                return this.$storyapi.richTextResolver.render(this.blok.info)
-            },
+export default {
+    name: 'SectionTermine',
+    props: ['blok'],
+    computed: {
+        announcements() {
+            return this.$store.state.announcements
         },
-    }
+        text1() {
+            return this.$storyapi.richTextResolver.render(this.blok.text1)
+        },
+        notdienst() {
+            return this.$storyapi.richTextResolver.render(this.blok.notdienst)
+        },
+        info() {
+            return this.$storyapi.richTextResolver.render(this.blok.info)
+        },
+    },
+}
 </script>
 
 <style lang="scss">
-    .notdienst {
-        margin-bottom: 0;
-    }
-    .info {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.notdienst {
+    margin-bottom: 0;
+}
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 </style>
