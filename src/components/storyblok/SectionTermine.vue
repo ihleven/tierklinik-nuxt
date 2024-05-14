@@ -48,7 +48,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Montag</th>
-                                        <td>9h - 11h</td>
+                                        <td></td>
                                         <td>16h - 19h</td>
                                     </tr>
                                     <!-- <tr>
@@ -63,18 +63,23 @@
                                     </tr> -->
                                     <tr>
                                         <th>Donnerstag</th>
-                                        <td>9h - 11h</td>
+                                        <td></td>
                                         <td>16h - 19h</td>
                                     </tr>
-                                    <!-- <tr>
-                                        <th>Freitag</th>
-                                        <td>Nur mit Termin</td>
-                                        <td></td>
-                                    </tr> -->
                                     <tr>
-                                        <th>Samstag</th>
-                                        <td>9h - 11h</td>
+                                        <th></th>
                                         <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Zusätzliche Telefonzeit:</th>
+                                        <td>Montag 10h - 12h</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            Anmeldung per Email jederzeit möglich: mail@tierklinik-tschabrun.com
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
