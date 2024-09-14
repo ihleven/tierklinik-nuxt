@@ -73,7 +73,7 @@
                                     </tr>
                                     <tr>
                                         <th>Zusätzliche Telefonzeit:</th>
-                                        <td>Montag 10h - 12h</td>
+                                        <td>Montag 11h - 12h</td>
                                         <td></td>
                                     </tr>
                                     <tr>
