@@ -49,7 +49,7 @@
                                     <tr>
                                         <th>Montag</th>
                                         <td></td>
-                                        <td>16h - 19h</td>
+                                        <td>17h - 19h</td>
                                     </tr>
                                     <!-- <tr>
                                         <th>Dienstag</th>
@@ -62,9 +62,9 @@
                                         <td></td>
                                     </tr> -->
                                     <tr>
-                                        <th>Donnerstag</th>
+                                        <th>Samstag</th>
+                                        <td>9h - 11h</td>
                                         <td></td>
-                                        <td>16h - 19h</td>
                                     </tr>
                                     <tr>
                                         <th></th>
