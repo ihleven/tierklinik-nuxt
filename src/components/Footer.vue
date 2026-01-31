@@ -22,8 +22,8 @@
                                 <li class="is-size-5"><a href="/patienten">Patienten</a></li>
                                 <li class="is-size-5"><a href="/leistungen">Unsere Leistungen</a></li>
                                 <li class="is-size-5"><a href="/ratgeber">Ratgeber</a></li>
-                                <li class="is-size-5"><a href="/aktuelles">Aktuelles</a></li>
-                                <li class="is-size-5"><a href="/blog">Blog</a></li>
+                                <!-- <li class="is-size-5"><a href="/aktuelles">Aktuelles</a></li> -->
+                                <!-- <li class="is-size-5"><a href="/blog">Blog</a></li> -->
 
                                 <!-- <li class="is-size-5"><a href="/impressum">Impressum</a></li>
                                 <li class="is-size-5"><a href="/datenschutz">Datenschutz</a></li>
@@ -137,11 +137,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         li {
             padding: 0.25rem 0.5rem;
 
             a {
                 color: rgb(150, 146, 146);
+
                 &:hover {
                     color: rgb(243, 237, 237);
                     // background-color: hsl(0, 0%, 24%);
