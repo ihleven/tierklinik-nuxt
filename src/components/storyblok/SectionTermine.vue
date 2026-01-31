@@ -22,9 +22,9 @@
                                 <!-- </p> -->
                             </article>
                         </div>
-                        <div class="tile is-parent">
+                        <!-- <div class="tile is-parent">
                             <article class="tile is-child box" v-html="text1"></article>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="tile is-parent">
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="tile is-parent is-vertical">
-                    <article class="tile is-child">
+                    <!-- <article class="tile is-child">
                         <div class="card is-shady notdienst">
                             <div class="card-image notification is-danger has-text-centered"
                                 style="border-bottom-left-radius: 0; border-bottom-right-radius: 0">
@@ -96,9 +96,9 @@
                             </div>
                             <div class="card-content content" v-html="notdienst"></div>
                         </div>
-                    </article>
+                    </article> -->
 
-                    <article class="tile is-child box info" v-html="info"></article>
+                    <article class="tile is-child box info" v-html="text1"></article>
                 </div>
             </div>
 

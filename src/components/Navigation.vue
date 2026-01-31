@@ -14,12 +14,8 @@
                     </h1>
                 </a>
 
-                <span
-                    class="navbar-burger burger"
-                    :class="{ 'is-active': menuOpen }"
-                    data-target="navbarMenu"
-                    @click="toggleMenu"
-                >
+                <span class="navbar-burger burger" :class="{ 'is-active': menuOpen }" data-target="navbarMenu"
+                    @click="toggleMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -31,9 +27,9 @@
                     <!-- <n-link :to="'/patienten'" class="navbar-item">Patienten</n-link> -->
                     <n-link :to="'/leistungen'" class="navbar-item">Leistungen</n-link>
                     <n-link :to="'/ratgeber'" class="navbar-item">Ratgeber</n-link>
-                    <n-link :to="'/aktuelles'" class="navbar-item">Aktuelles</n-link>
+                    <!-- <n-link :to="'/aktuelles'" class="navbar-item">Aktuelles</n-link> -->
                     <n-link :to="'/patienten'" class="navbar-item">Patienten</n-link>
-                    <n-link :to="'/blog'" class="navbar-item">Blog</n-link>
+                    <!-- <n-link :to="'/blog'" class="navbar-item">Blog</n-link> -->
                 </div>
                 <!-- <div class="navbar-end">
                     <div class="tabs is-right">
@@ -74,12 +70,15 @@ export default {
 .navbar {
     .navbar-brand {
         padding: 1rem;
+
         .navbar-item {
             margin: -1rem;
             padding: 0 1rem;
         }
     }
+
     background: rgba(250, 250, 250, 0.3);
+
     .navbar-item {
         img {
             max-height: unset;
@@ -87,9 +86,11 @@ export default {
             height: 5rem;
             padding-left: 1rem;
         }
+
         h1 {
             padding-left: 1rem;
         }
+
         &.logo {
             // padding: 1rem 1rem 1rem 5rem;
             // padding: 0 1rem 0 5rem;
@@ -97,8 +98,10 @@ export default {
             // background-size: contain;
             // background-position: 0% 50%;
         }
+
         a {
             border-bottom: 1px solid transparent;
+
             &:hover a {
                 border-bottom: 1px solid currentColor;
             }
