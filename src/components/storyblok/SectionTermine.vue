@@ -66,12 +66,12 @@
                                         <td>9h - 11h</td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <th></th>
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                    <!-- <tr>
+                                    <tr>
                                         <th>Zusätzliche Telefonzeit:</th>
                                         <td>Montag 11h - 12h</td>
                                         <td></td>
