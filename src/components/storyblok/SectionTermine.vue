@@ -71,11 +71,11 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <th>Zusätzliche Telefonzeit:</th>
                                         <td>Montag 11h - 12h</td>
                                         <td></td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <td colspan="3">
                                             Anmeldung per Email jederzeit möglich: mail@tierklinik-tschabrun.com
